@@ -81,33 +81,33 @@ h1,h2,.display{font-family:'Berkshire Swash',serif;font-weight:normal}
 
 /* MISSION */
 .mission{position:relative;overflow:hidden}
-.mission-img-wrap{position:relative;width:75%;height:340px;overflow:hidden;margin:0 auto;border-radius:4px}
+.mission-img-wrap{position:relative;width:75%;height:240px;overflow:hidden;margin:0 auto;border-radius:4px}
 .mission-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:brightness(.35)}
 /* fade left/right edges */
 .mission-img-wrap::before,.mission-img-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
 .mission-img-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
 .mission-img-wrap::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
 .mission-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 80px;z-index:3;background:linear-gradient(90deg,#0a0e18 0%,rgba(10,14,24,.15) 20%,rgba(10,14,24,.15) 80%,#0a0e18 100%)}
-.mission blockquote{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(20px,3.2vw,34px);color:#fff;max-width:760px;line-height:1.5;text-shadow:0 2px 24px rgba(0,0,0,.95)}
-.mission-attr{display:block;margin-top:16px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,75,.7);font-weight:600}
+.mission blockquote{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(26px,5vw,38px);color:#fff;max-width:760px;line-height:1.5;text-shadow:0 2px 24px rgba(0,0,0,.95)}
+.mission-attr{display:block;margin-top:14px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,75,.7);font-weight:600}
 
 /* WHAT GRID */
-.what-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;margin-top:36px}
-.what-card{background:var(--bg4);padding:28px 24px;border:1px solid var(--border2);transition:background .2s,border-color .2s}
-.what-card:hover{background:rgba(42,74,138,.12);border-color:var(--border)}
+.what-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;margin-top:36px;margin-bottom:60px}
+.what-card{background:var(--bg4);padding:28px 24px;border:1px solid var(--border2)}
+
 .what-card .wc-title{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700}
 .what-card .wc-body{font-size:15px;color:#fff;line-height:1.65;font-weight:400}
 
 /* REVENUE STREAMS 2x2 */
 .streams-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:36px}
 @media(max-width:580px){.streams-grid{grid-template-columns:1fr}}
-.stream-card{background:var(--bg4);border:1px solid var(--border2);padding:30px 26px;transition:background .2s,border-color .2s;position:relative;overflow:hidden}
+.stream-card{background:var(--bg4);border:1px solid var(--border2);padding:30px 26px;position:relative;overflow:hidden}
 .stream-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
 .stream-card.s1::before{background:var(--gold)}
 .stream-card.s2::before{background:var(--teal3)}
 .stream-card.s3::before{background:var(--blue3)}
 .stream-card.s4::before{background:var(--green)}
-.stream-card:hover{background:rgba(42,74,138,.1);border-color:var(--border)}
+
 .sc-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
 .stream-card.s1 .sc-label{color:var(--gold2)}
 .stream-card.s2 .sc-label{color:var(--teal3)}
@@ -156,7 +156,7 @@ h1,h2,.display{font-family:'Berkshire Swash',serif;font-weight:normal}
 
 /* YEAR METRICS */
 .yr-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin:0 0 22px}
-.yr-metric{background:var(--bg4);border:1px solid var(--border2);padding:18px 16px;text-align:center}.yr-metric-detail{font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500}
+.yr-metric{background:var(--bg4);border:1px solid var(--border2);padding:18px 16px;text-align:center}
 .yr-metric .mv{font-size:clamp(15px,1.9vw,21px);font-weight:700;display:block;margin-bottom:4px;color:#fff}
 .yr-metric .mv.green{color:var(--green)}.yr-metric .mv.red{color:var(--red)}.yr-metric .mv.gold{color:var(--gold2)}.yr-metric .mv.blue{color:var(--blue3)}.yr-metric .mv.teal{color:var(--teal3)}
 .yr-metric .ml{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700}
@@ -268,7 +268,7 @@ footer a:hover{color:var(--gold2)}
 /* WHAT MAKES US DIFFERENT */
 .wmud-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:36px}
 @media(max-width:640px){.wmud-grid{grid-template-columns:1fr}}
-.wmud-card{background:var(--bg4);border:1px solid var(--border2);padding:28px 26px;transition:background .2s}
+.wmud-card{background:var(--bg4);border:1px solid var(--border2);padding:28px 26px}
 
 .wmud-card--wide{grid-column:1/-1}
 .wmud-title{font-size:16px;font-weight:700;color:var(--gold2);margin-bottom:12px;line-height:1.3}
@@ -320,7 +320,26 @@ footer a:hover{color:var(--gold2)}
 #budget-modal.open{display:flex}
 .budget-modal-box{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:32px;max-width:780px;width:100%;max-height:88vh;overflow-y:auto;position:relative}
 .budget-modal-box
-/* ── HAMBURGER MENU ──────────────────────────────────────────── */
+.desktop-br{display:none}@media(min-width:641px){.desktop-br{display:inline}}
+.hero-tagline{font-size:clamp(13px,1.4vw,16px);color:rgba(255,255,255,.5);margin-top:6px;letter-spacing:.06em;font-style:italic}
+.hero-sub-lede{font-size:clamp(15px,1.8vw,20px);color:rgba(255,255,255,.75);margin-top:12px;font-weight:400}
+.principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.principle-card{background:var(--bg4);border:1px solid var(--border2);padding:32px 28px}
+.principle-title{font-family:'Berkshire Swash',serif;font-size:clamp(16px,1.6vw,20px);color:var(--gold2);margin-bottom:12px;font-weight:normal;line-height:1.3}
+.principle-body{font-size:15px;color:#fff;line-height:1.75}
+.founder-video-section{background:#060d16;padding:40px 0}
+.founder-bio-card{display:flex;flex-direction:column;gap:20px}
+.founder-bio-name{font-family:'Berkshire Swash',serif;font-size:clamp(22px,3vw,30px);color:#fff;font-weight:normal;margin-bottom:4px}
+.founder-bio-role{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:20px}
+.founder-bio-body p{color:#fff;line-height:1.85;font-size:16px;margin-bottom:16px}
+.founder-bio-body p:last-child{margin-bottom:0}
+.advisors-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.advisor-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;background:var(--bg3);border:1px solid var(--border2);padding:32px 28px;border-radius:4px}
+.advisor-photo{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(212,168,75,.3);margin-bottom:4px}
+.advisor-name{font-family:'Berkshire Swash',serif;font-size:18px;color:#fff;margin-bottom:3px;font-weight:normal}
+.advisor-title{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:10px;line-height:1.5}
+.advisor-bio{font-size:14px;color:#fff;line-height:1.7;margin:0}
+.advisor-bio em{color:rgba(255,255,255,.85);font-style:italic}
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;padding:14px 16px;cursor:pointer;background:transparent;border:none;margin-left:auto;flex-shrink:0}
 .hamburger span{display:block;width:22px;height:2px;background:#d4a84b;border-radius:1px;transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -330,15 +349,18 @@ footer a:hover{color:var(--gold2)}
 .mobile-nav.open{display:flex}
 .mobile-nav .tab-btn{padding:14px 28px;text-align:left;border-bottom:none;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
 .mobile-nav .tab-btn:hover,.mobile-nav .tab-btn.active{color:var(--gold2)}
-
+.fiscal-note{margin-top:20px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:600;line-height:1.9}
 @media(max-width:640px){
-  /* Hide desktop nav tabs, show hamburger */
   .tab-nav .tab-btn:not(.tab-logo){display:none}
   .tab-logo .bifrost-school-text{display:none}
   .hamburger{display:flex}
-  /* Blockquote — less compression on mobile */
-  blockquote{font-size:clamp(17px,5vw,24px);padding:0 12px}
-  .mission-overlay{padding:28px 24px}
+  blockquote{padding:0 12px}
+  .mission-overlay{padding:20px 20px !important}
+  .yr-metrics{grid-template-columns:1fr !important}
+  .principles-grid{grid-template-columns:1fr}
+  .advisors-grid{grid-template-columns:1fr}
+  .founder-video-section .section-inner{padding:0 16px !important}
+  .wmud-list li{font-size:16px}
 }
 ::-webkit-scrollbar{width:5px}
 .budget-modal-box::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
@@ -364,7 +386,26 @@ footer a:hover{color:var(--gold2)}
 .see-plan-btn:hover{background:rgba(212,168,75,.1);border-color:var(--gold)}
 @media(max-width:580px){.bm-metrics{grid-template-columns:1fr}.budget-modal-box{padding:20px}}
 
-/* ── HAMBURGER MENU ──────────────────────────────────────────── */
+.desktop-br{display:none}@media(min-width:641px){.desktop-br{display:inline}}
+.hero-tagline{font-size:clamp(13px,1.4vw,16px);color:rgba(255,255,255,.5);margin-top:6px;letter-spacing:.06em;font-style:italic}
+.hero-sub-lede{font-size:clamp(15px,1.8vw,20px);color:rgba(255,255,255,.75);margin-top:12px;font-weight:400}
+.principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.principle-card{background:var(--bg4);border:1px solid var(--border2);padding:32px 28px}
+.principle-title{font-family:'Berkshire Swash',serif;font-size:clamp(16px,1.6vw,20px);color:var(--gold2);margin-bottom:12px;font-weight:normal;line-height:1.3}
+.principle-body{font-size:15px;color:#fff;line-height:1.75}
+.founder-video-section{background:#060d16;padding:40px 0}
+.founder-bio-card{display:flex;flex-direction:column;gap:20px}
+.founder-bio-name{font-family:'Berkshire Swash',serif;font-size:clamp(22px,3vw,30px);color:#fff;font-weight:normal;margin-bottom:4px}
+.founder-bio-role{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:20px}
+.founder-bio-body p{color:#fff;line-height:1.85;font-size:16px;margin-bottom:16px}
+.founder-bio-body p:last-child{margin-bottom:0}
+.advisors-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.advisor-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;background:var(--bg3);border:1px solid var(--border2);padding:32px 28px;border-radius:4px}
+.advisor-photo{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(212,168,75,.3);margin-bottom:4px}
+.advisor-name{font-family:'Berkshire Swash',serif;font-size:18px;color:#fff;margin-bottom:3px;font-weight:normal}
+.advisor-title{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:10px;line-height:1.5}
+.advisor-bio{font-size:14px;color:#fff;line-height:1.7;margin:0}
+.advisor-bio em{color:rgba(255,255,255,.85);font-style:italic}
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;padding:14px 16px;cursor:pointer;background:transparent;border:none;margin-left:auto;flex-shrink:0}
 .hamburger span{display:block;width:22px;height:2px;background:#d4a84b;border-radius:1px;transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -374,15 +415,18 @@ footer a:hover{color:var(--gold2)}
 .mobile-nav.open{display:flex}
 .mobile-nav .tab-btn{padding:14px 28px;text-align:left;border-bottom:none;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
 .mobile-nav .tab-btn:hover,.mobile-nav .tab-btn.active{color:var(--gold2)}
-
+.fiscal-note{margin-top:20px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:600;line-height:1.9}
 @media(max-width:640px){
-  /* Hide desktop nav tabs, show hamburger */
   .tab-nav .tab-btn:not(.tab-logo){display:none}
   .tab-logo .bifrost-school-text{display:none}
   .hamburger{display:flex}
-  /* Blockquote — less compression on mobile */
-  blockquote{font-size:clamp(17px,5vw,24px);padding:0 12px}
-  .mission-overlay{padding:28px 24px}
+  blockquote{padding:0 12px}
+  .mission-overlay{padding:20px 20px !important}
+  .yr-metrics{grid-template-columns:1fr !important}
+  .principles-grid{grid-template-columns:1fr}
+  .advisors-grid{grid-template-columns:1fr}
+  .founder-video-section .section-inner{padding:0 16px !important}
+  .wmud-list li{font-size:16px}
 }
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
 </style>
@@ -390,15 +434,7 @@ footer a:hover{color:var(--gold2)}
 <body>
 
 <!-- SITE GATE -->
-<div id="site-gate" style="position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center">
-  <div class="pw-box" style="max-width:380px;width:100%">
-    <div class="pw-title">The Bifrost School</div>
-    <div class="pw-sub">Private Preview</div>
-    <input class="pw-input" type="password" id="site-pw-input" placeholder="Enter passphrase">
-    <button class="pw-btn" id="site-pw-btn">Enter</button>
-    <div class="pw-err" id="site-pw-err">Incorrect passphrase</div>
-  </div>
-</div>
+
 
 <!-- FLOATING DONATE -->
 <button onclick="switchTab('donate')" class="float-donate" id="float-donate-btn">Donate</button>
@@ -411,12 +447,13 @@ footer a:hover{color:var(--gold2)}
       <path d="M 32 34 A 28 28 0 0 1 88 34" fill="none" stroke="#d4a84b" stroke-width="7" stroke-linecap="butt"/>
       <path d="M 60 34 A 28 28 0 0 1 116 34" fill="none" stroke="#d4a84b" stroke-width="7" stroke-linecap="butt"/>
     </svg>
-    <span class="bifrost-school-text" style="font-family:'Source Sans 3',sans-serif;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:rgba(212,168,75,.7);font-weight:700;line-height:1">BIFROST SCHOOL</span>
+    <span style="font-family:'Source Sans 3',sans-serif;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:rgba(212,168,75,.7);font-weight:700;line-height:1">BIFROST SCHOOL</span>
   </button>
   <div style="flex:1"></div>
   <button class="tab-btn active" data-tab="home">Vision</button>
   <button class="tab-btn" data-tab="development">Development</button>
   <button class="tab-btn" data-tab="donate">Donate</button>
+  <button class="tab-btn" data-tab="about">About</button>
   <button class="tab-btn" data-tab="contact">Contact</button>
   <div style="width:16px"></div>
   <button class="hamburger" id="hamburger-btn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -425,6 +462,8 @@ footer a:hover{color:var(--gold2)}
   <button class="tab-btn" data-tab="home">Vision</button>
   <button class="tab-btn" data-tab="development">Development</button>
   <button class="tab-btn" data-tab="donate">Donate</button>
+  <button class="tab-btn" data-tab="about">About</button>
+  <button class="tab-btn" data-tab="about">About</button>
   <button class="tab-btn" data-tab="contact">Contact</button>
 </div>
 
@@ -441,8 +480,9 @@ footer a:hover{color:var(--gold2)}
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="reveal d1" id="d-school-name">The Bifrost School</h1>
-      <p class="hero-lede reveal d2" id="d-hero-lede">Where every lesson is an adventure &mdash; and every child is the hero of their own story.</p>
-      <div class="scroll-cue reveal d3">Scroll to explore</div>
+      <p class="hero-lede reveal d2" id="d-hero-lede"></p>
+      <p class="hero-tagline reveal d3" id="d-hero-tagline">The magic makes it real.</p>
+      <div class="scroll-cue reveal d3" style="margin-top:36px">Scroll to explore</div>
     </div>
   </div>
 
@@ -452,13 +492,32 @@ footer a:hover{color:var(--gold2)}
     <div class="mission-img-wrap">
       <img id="d-mission-art" src="images/mission-art.jpg" alt="" class="mission-img">
       <div class="mission-overlay">
-        <blockquote id="d-mission-quote"></blockquote>
-        <div class="mission-attr" id="d-mission-attr">Jesse Livingston — Founder</div>
+        <blockquote id="d-mission-quote">Learning doesn&rsquo;t have to feel like a dungeon. At The Bifrost School, it feels like a quest.</blockquote>
       </div>
     </div>
   </div>
+
+  <!-- FOUNDER VIDEO -->
+  <div class="founder-video-section reveal" id="founder-video-section">
+    <div class="section-inner" style="max-width:800px;text-align:center;padding:0 24px;margin:0 auto">
+      <div class="eyebrow" id="d-founder-video-eyebrow">From the Founder</div>
+      <div style="position:relative;border-radius:8px;overflow:hidden">
+        <video id="founder-video" controls playsinline style="width:100%;border-radius:8px;background:#000;display:none">
+          <source id="founder-video-src" src="" type="video/mp4">
+        </video>
+        <div id="founder-video-placeholder" style="background:#0f1e2e;border-radius:8px;padding:80px 40px;border:1px solid var(--border);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div style="font-size:40px;opacity:.25;margin-bottom:12px">&#9654;</div>
+          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)">Founder video coming soon</div>
+        </div>
+      </div>
+      <p id="d-founder-video-caption" style="margin-top:20px;color:rgba(255,255,255,.55);font-size:15px;line-height:1.6"></p>
+    </div>
+  </div>
+  <!-- /FOUNDER VIDEO -->
   <!-- WHAT WE TEACH -->
-  <div class="section dark">
+  <div class="section dark" style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:url(images/pillars-bg.jpg);background-size:cover;background-position:center 30%;filter:brightness(.18)"></div>
+    <div style="position:relative;z-index:2">
     <div class="container">
       <div class="reveal"><div class="eyebrow" id="d-teach-eyebrow">The Program</div></div>
       <h2 class="section-title reveal d1" id="d-teach-title">What We Teach &mdash; and How</h2>
@@ -470,13 +529,24 @@ footer a:hover{color:var(--gold2)}
       <div class="what-grid reveal d3" id="d-subject-cards"></div>
     </div>
   </div>
+  </div>
 
 
 
   
 
   <!-- WHAT MAKES US DIFFERENT -->
-  <div class="section" style="position:relative;overflow:hidden">
+    <!-- PRINCIPLES -->
+  <div class="section dark principles-section reveal">
+    <div class="section-inner" style="max-width:860px;margin:0 auto;padding:80px 24px">
+      <div class="eyebrow" id="d-principles-eyebrow">Our Philosophy</div>
+      <h2 class="section-title" id="d-principles-title">The bridge between the imagination<br class="desktop-br"> and the real</h2>
+      <p class="section-body" id="d-principles-subtitle" style="margin-top:16px;margin-bottom:48px;color:#fff;max-width:620px"></p>
+      <div class="principles-grid" id="d-principles-grid"></div>
+    </div>
+  </div>
+  <!-- /PRINCIPLES -->
+<div class="section" style="position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background-image:url(images/section-bg.jpg);background-size:cover;background-position:70% center;filter:brightness(.18)"></div>
     <div class="container" style="position:relative;z-index:2">
       <div class="reveal"><div class="eyebrow">What Makes Us Different</div></div>
@@ -597,7 +667,7 @@ footer a:hover{color:var(--gold2)}
         <p class="section-body reveal d2" id="d-cta-body" style="margin:0 auto 48px;text-align:center"></p>
         <div class="tiers reveal d3" id="d-tiers"></div>
         <div class="reveal d4">
-          <button onclick="switchTab('donate')" class="donate-btn" id="d-donate-btn"><span id="d-donate-btn-text">Make a Gift to The Bifrost School</span></button>
+          <button onclick="switchTab('contact')" class="donate-btn" id="d-donate-btn"><span id="d-donate-btn-text">Make a Gift to The Bifrost School</span></button>
         </div>
         <p class="fiscal-note reveal" id="d-fiscal-note"></p>
       </div>
@@ -606,6 +676,54 @@ footer a:hover{color:var(--gold2)}
 </div><!-- /tab-donate -->
 
 <!-- ═══════════════════════════════════════════════════ TAB: CONTACT -->
+<!-- ABOUT TAB -->
+<div class="tab-panel" id="tab-about">
+  <div class="section dark reveal" style="padding-top:calc(56px + 80px);position:relative;overflow:hidden"><div style="position:absolute;inset:0;background-image:url(images/about-bg.jpg);background-size:cover;background-position:center 30%;filter:brightness(.22)"></div><div style="position:relative;z-index:2">
+    <div class="section-inner" style="max-width:760px;margin:0 auto;padding:0 24px 60px">
+      <div class="eyebrow">The Story</div>
+      <h2 class="section-title" id="d-about-story-title">How The Bifrost School Came to Be</h2>
+      <div class="section-body founder-bio-body" id="d-about-story" style="margin-top:24px;color:#fff"></div>
+    </div>
+  </div>
+  </div>
+  <div class="section dark reveal" style="border-top:1px solid var(--border)">
+    <div class="section-inner" style="max-width:760px;margin:0 auto;padding:40px 24px 24px">
+      <div class="eyebrow">Founder</div>
+      <div class="founder-bio-card">
+        <img src="images/founder-photo.jpg" alt="Jesse Livingston" style="width:320px;height:320px;border-radius:6px;object-fit:cover;object-position:center top;border:2px solid rgba(212,168,75,.3);margin-bottom:8px">
+        <div class="founder-bio-name" id="d-about-founder-name">Jesse Livingston</div>
+        <div class="founder-bio-role" id="d-about-founder-role">Founder</div>
+        <div class="founder-bio-body" id="d-about-founder-bio">
+          <p>Jesse brings an uncommon combination of musical performance training, educational leadership, and human-centered design experience.</p>
+          <p>He holds a Bachelor of Music in Music Education from Oberlin College and a Master of Music in Conducting from Ithaca College, where he founded the school&rsquo;s first orchestra open to non-music majors. He has conducted orchestras and opera productions at Ithaca College, Oberlin College, and in Chapel Hill, NC, and served as a guest conductor at several all-state orchestra festivals.</p>
+          <p>After a decade in professional music, Jesse built a second career as a UX researcher at companies including LinkedIn, Microsoft, and ServiceNow &mdash; work that sharpened his instincts for designing experiences around how people actually learn and engage.</p>
+          <p>For the past several years Jesse has been running a tabletop RPG group out of his home, using fantasy storytelling and collaborative roleplay to teach, connect, and create &mdash; developing and testing the core techniques that now form the foundation of The Bifrost School&rsquo;s curriculum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ADVISORS -->
+  <div class="section dark advisors-section reveal">
+    <div class="section-inner" style="max-width:860px;margin:0 auto;padding:28px 24px 60px">
+      <div class="eyebrow">Advisors</div>
+      <h2 class="section-title" style="margin-bottom:40px">Built With Guidance From</h2>
+      <div class="advisors-grid">
+        <div class="advisor-card">
+          <img src="images/advisor-1.jpg" alt="Gever Tulley" class="advisor-photo">
+          <div><div class="advisor-name">Gever Tulley</div><div class="advisor-title">Founder, Tinkering School &amp; Brightworks School</div><p class="advisor-bio">A pioneer in experiential learning and author of <em>50 Dangerous Things You Should Let Your Children Do</em>. Gever has spent decades proving that children learn best when given real tools, real problems, and real freedom to build.</p></div>
+        </div>
+        <div class="advisor-card">
+          <img src="images/advisor-2.jpg" alt="Chris Balme" class="advisor-photo">
+          <div><div class="advisor-name">Chris Balme</div><div class="advisor-title">Ashoka Fellow &middot; Co-founder, Millennium School &middot; Author</div><p class="advisor-bio">One of the leading voices in redesigning education around how young people actually develop. Chris co-founded Millennium School, received the Ashoka Fellowship, and authored <em>Finding the Magic in Middle School</em>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /ADVISORS -->
+
+</div>
+<!-- /ABOUT TAB -->
+
 <div class="tab-panel" id="tab-contact">
   <div class="contact-section">
     <div class="contact-art-bg" style="position:absolute;inset:0;background-image:url(images/contact-art-bg.jpg);background-size:cover;background-position:center 40%;filter:brightness(.45)"></div>
@@ -628,7 +746,7 @@ footer a:hover{color:var(--gold2)}
         </div>
         <div class="form-field"><label id="d-form-message-label">Message</label><textarea id="form-message" name="message" required></textarea></div>
         <button type="submit" class="submit-btn"><span id="d-form-submit-text">Send Message</span></button>
-        <div class="form-success" id="form-success" style="display:none"><span id="d-form-success-text">Thank you &mdash; we&rsquo;ll be in touch soon.</span></div>
+        <div class="form-success" id="form-success"><span id="d-form-success-text">Thank you &mdash; we&rsquo;ll be in touch soon.</span></div>
       </form>
     </div>
   </div>
@@ -639,7 +757,12 @@ footer a:hover{color:var(--gold2)}
 
 <script>
 function getConfig(){try{const r=localStorage.getItem('bifrost_config');if(r)return JSON.parse(r);}catch(e){}return null;}
-const D=JSON.parse("{\"schoolName\":\"The Bifrost School\",\"location\":\"\",\"heroLede\":\"Academic learning taught through fantasy role-playing games\",\"videoFile\":\"bifrost_bg.mp4\",\"missionAttr\":\"Jesse Livingston — Founder\",\"missionQuote\":\"School can be as epic as a fantasy quest\",\"teachEyebrow\":\"The Program\",\"teachTitle\":\"What We Teach — and How\",\"teachBody\":\"The Bifrost School is a small-group educational program where learning come to life through fantasy roleplaying adventures.  Sessions run two hours, once per week, in groups of four to five students — offered both in-person and online.\",\"subjects\":[{\"title\":\"English\",\"body\":\"Storytelling, reading, and writing taught as character creation and world-building.\"},{\"title\":\"Mathematics\",\"body\":\"Problem-solving through quests, puzzles, and in-world resource management.\"},{\"title\":\"Music\",\"body\":\"Rhythm, theory, and performance as bardic skill — the magic of sound.\"}],\"wmudEyebrow\":\"What Makes Us Different\",\"wmudTitle\":\"School as Adventure\",\"wmudCards\":[{\"title\":\"Role-playing is immersive\",\"body\":\"Small groups of 4–6 students huddle around a table, creating and roleplaying fantasy characters that go on epic quests.\"},{\"title\":\"Learning is driven by a quest\",\"body\":\"Traditional education presents learning as tasks with no context. At The Bifrost School, learning is driven by a quest.\"},{\"title\":\"Academics are seamlessly integrated\",\"body\":\"Understanding ecology might be integral to helping a group of Druids; knowledge of political systems might help students form the government of a new fantasy city. <br><br>It's so seamless, they won't realize it's \\\"school.\\\"\"},{\"title\":\"Learning content is the magic\",\"body\":\"<ul class=\\\"wmud-list\\\"><li><strong>Language:</strong> Writing “Apple” with the appropriate magical ink might conjure one.</li><li><strong>Math:</strong> A multiplication spell might turn that apple into many.</li><li><strong>Music:</strong> Rhythmic movement, as an animating force, might lift it into the air.</li></ul>\"}],\"fundingEyebrow\":\"Current Funding Need\",\"fundingTitle\":\"Development & Pilot Year\",\"fundingSub\":\"18 month development & pilot goal\",\"fundingGoal\":400000,\"amountRaised\":0,\"fundingBlurb\":\"This funding covers the full development and pilot phase — from narrative design and curriculum development through our first cohorts.\",\"milestonesLabel\":\"Development Milestones\",\"milestones\":[{\"num\":\"1\",\"strong\":\"Build the narrative world.\",\"body\":\"Contract writers and game designers to develop the RPG setting, characters, and story systems that anchor every subject.\"},{\"num\":\"2\",\"strong\":\"Develop the curriculum.\",\"body\":\"Collaborate with experienced educators to integrate English, Math, and Music in rigorous, standards-aligned ways.\"},{\"num\":\"3\",\"strong\":\"Run pilot cohorts.\",\"body\":\"Launch in-person and online groups to test, gather feedback, and refine before full launch.\"},{\"num\":\"4\",\"strong\":\"Hire and train founding staff.\",\"body\":\"Recruit, vet, and onboard the teachers and creative staff.\"},{\"num\":\"5\",\"strong\":\"Build for scale.\",\"body\":\"Finalize the platform, marketing, and licensing infrastructure for sustainable growth from Year 1 onward.\"}],\"budgetTitle\":\"18-Month Development Plan\",\"budgetSub\":\"Pilot Year Budget Breakdown\",\"budgetTotal\":400000,\"budgetFiscalRate\":3,\"budgetNote\":\"Contractor hours are front-loaded: narrative and game designers work full engagement during the 4-month build phase, then taper. Educators engage once pilots launch. Fiscal sponsor fee at 3% of total raise.\",\"budgetLines\":[{\"section\":\"People\",\"items\":[{\"label\":\"Full time salary\",\"basis\":\"$180k/yr × 1.5 years\",\"amount\":270000},{\"label\":\"Narrative design contractor\",\"basis\":\"$65/hr × 20hr/wk × 26 wks\",\"amount\":33800},{\"label\":\"Game design contractor\",\"basis\":\"$60/hr × 15hr/wk × 26 wks\",\"amount\":23400},{\"label\":\"Educator contractors (×2)\",\"basis\":\"$45/hr × 10hr/wk × 26 wks × 2\",\"amount\":23400}]},{\"section\":\"Formation & Legal\",\"items\":[{\"label\":\"LLC formation\",\"basis\":\"Tennessee filing + registered agent\",\"amount\":800},{\"label\":\"Legal (agreements + contracts)\",\"basis\":\"Attorney flat fee est.\",\"amount\":3500},{\"label\":\"Fiscal sponsor fee\",\"basis\":\"3% of $400,000 raised\",\"amount\":12000}]},{\"section\":\"Operations\",\"items\":[{\"label\":\"Business insurance (GL + E&O)\",\"basis\":\"$150/mo × 18\",\"amount\":2700},{\"label\":\"Curriculum materials & supplies\",\"basis\":\"Dice, maps, print, props\",\"amount\":3200},{\"label\":\"Online platform (Zoom, tools)\",\"basis\":\"$80/mo × 18\",\"amount\":1440},{\"label\":\"Marketing & outreach\",\"basis\":\"$300/mo × 18\",\"amount\":5400}]},{\"section\":\"Contingency\",\"items\":[{\"label\":\"Contingency reserve (10%)\",\"basis\":\"Buffer on total budget\",\"amount\":34260}]}],\"streamsEyebrow\":\"Revenue Streams\",\"streamsTitle\":\"Four Ways the School Sustains Itself\",\"streamsBody\":\"We have a range of ways to help sustain the school, with tuition as the anchor.\",\"streams\":[{\"cls\":\"s1\",\"label\":\"In-Person Program\",\"body\":\"Small groups of 4–5 students meeting weekly at the school's home base (founder's home).\"},{\"cls\":\"s2\",\"label\":\"Online Program\",\"body\":\"The same RPG-driven curriculum delivered virtually, reaching students nationwide.\"},{\"cls\":\"s3\",\"label\":\"Audio Adventures\",\"body\":\"Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions.\"},{\"cls\":\"s4\",\"label\":\"Curriculum Licensing\",\"body\":\"Other tutors, micro-schools, and homeschool co-ops license the Bifrost curriculum. Recurring annual fees or one time purchases.\"}],\"roadmapEyebrow\":\"The Roadmap\",\"roadmapTitle\":\"Five Years to Full Capacity\",\"roadmapIntro\":\"Once the development year is complete, here is how The Bifrost School grows from its first cohorts to a self-sustaining operation.\",\"chartEyebrow\":\"Revenue Projection\",\"chartTitle\":\"Donations Needed Each Year\",\"chartBody\":\"As program revenue grows year over year, the donation need declines. By Year 5, the school approaches self-sufficiency.\",\"ctaEyebrow\":\"Join the Quest\",\"ctaTitle\":\"Support The Bifrost School\",\"ctaBody\":\"Your support bridges the gap between development and a self-sustaining school.\",\"donateBtnText\":\"Make a Gift to The Bifrost School\",\"donateUrl\":\"#\",\"fiscalNote\":\"Donations processed through our fiscal sponsor · Tax-deductible under IRC §501(c)(3)\",\"contactEyebrow\":\"\",\"contactTitle\":\"Contact Us\",\"contactBody\":\"Whether you're a prospective donor, a family interested in enrollment, or an educator interested in licensing — we'd love to hear from you.\",\"email\":\"\",\"formRecipient\":\"jesse@bifrostschool.com\",\"formNameLabel\":\"Your Name\",\"formEmailLabel\":\"Email Address\",\"formInterestLabel\":\"I'm interested as a…\",\"formMessageLabel\":\"Message\",\"formSubmitText\":\"Send Message\",\"formSuccessText\":\"Thank you — we'll be in touch soon.\",\"priceIP\":200,\"priceON\":300,\"cohortSize\":4,\"weeks\":48,\"audioPrice\":12,\"licenseFee\":500,\"rateIP\":28,\"rateON\":25,\"payroll\":18,\"platform\":80,\"marketing\":200,\"donorPassword\":\"bifrost\",\"yearRamps\":[{\"ipC\":2,\"onC\":3,\"audioT\":1,\"audioU\":20,\"lic\":0,\"label\":\"Launch\",\"note\":\"Opening with 3+3 cohorts at roughly 40% capacity. Donations remain essential as the program builds its audience.\"},{\"ipC\":4,\"onC\":4,\"audioT\":3,\"audioU\":35,\"lic\":2,\"label\":\"Traction\",\"note\":\"Growing to 4+4 cohorts. First licensees onboard. Donation need declining.\"},{\"ipC\":4,\"onC\":7,\"audioT\":5,\"audioU\":60,\"lic\":6,\"label\":\"Growth\",\"note\":\"Near full in-person capacity. Online cohorts growing. Licensing and audio becoming meaningful.\"},{\"ipC\":4,\"onC\":9,\"audioT\":8,\"audioU\":90,\"lic\":12,\"label\":\"Scale\",\"note\":\"Approaching full capacity. Product revenue growing. Donation need closing significantly.\"},{\"ipC\":4,\"onC\":11,\"audioT\":10,\"audioU\":120,\"lic\":18,\"label\":\"Capacity\",\"note\":\"Full scale. Four revenue streams working together. The school approaches self-sufficiency.\"}],\"tiers\":[{\"amount\":100,\"name\":\"Apprentice\",\"desc\":\"Covers materials and supplies for one student for a full year of questing.\",\"featured\":false},{\"amount\":500,\"name\":\"Adventurer\",\"desc\":\"Sponsors two months of tuition for one student, enough to complete a full story arc.\",\"featured\":false},{\"amount\":2500,\"name\":\"Champion\",\"desc\":\"Funds one teacher for an entire month across all their cohorts.\",\"featured\":true},{\"amount\":10000,\"name\":\"Legendary\",\"desc\":\"Covers roughly one month of full operating costs for the school.\",\"featured\":false},{\"amount\":50000,\"name\":\"Realm Builder\",\"desc\":\"Funds approximately one full quarter of the school's development year.\",\"featured\":false}],\"eyebrow\":\"Donor Prospectus · A Five-Year Vision\"}");;;;;;;;
+const D=JSON.parse("{\"schoolName\":\"The Bifrost School\",\"location\":\"Johnson City, TN\",\"email\":\"jesse@bifrostschool.com\",\"donateUrl\":\"#\",\"eyebrow\":\"Early Supporter Preview\",\"heroLede\":\"Learning through fantasy storytelling.\",\"videoFile\":\"bifrost_bg.mp4\",\"missionQuote\":\"Sometimes you have to forget the real world to remember what\\u2019s real.\",\"fiscalNote\":\"Fiscal sponsorship application in progress\",\"teachEyebrow\":\"The Program\",\"teachTitle\":\"What We Teach \\u2014 and How\",\"teachBody\":\"The Bifrost School is a small-group educational program where learning comes to life through fantasy roleplaying adventures.  Sessions run two hours, once per week, in groups of four to five students \\u2014 offered both in-person and online.\",\"subjects\":[{\"title\":\"English\",\"body\":\"Storytelling, reading, and writing taught as character creation and world-building.\"},{\"title\":\"Mathematics\",\"body\":\"Problem-solving through quests, puzzles, and in-world resource management.\"},{\"title\":\"Music\",\"body\":\"Rhythm, theory, and performance as bardic skill \\u2014 the magic of sound.\"}],\"pillarsEyebrow\":\"Our Philosophy\",\"pillarsTitle\":\"The Four Pillars\",\"pillarsBody\":\"Every lesson, every quest, every session is built on four animating principles that we believe define what it means to be educated \\u2014 and to be alive.\",\"pillars\":[\"Know the magic within you\",\"See the wonder around you\",\"Face the challenge before you\",\"Live the adventure that calls you\"],\"streamsEyebrow\":\"Revenue Streams\",\"streamsTitle\":\"Four Ways the School Sustains Itself\",\"streamsBody\":\"The Bifrost School is designed with multiple overlapping revenue streams, each reinforcing the others. Tuition anchors the model. Products extend the mission and generate income with minimal additional cost.\",\"streams\":[{\"cls\":\"s1\",\"label\":\"In-Person Program\",\"body\":\"Small groups of 4\\u20135 students meeting weekly at the school's home base (founder's home).\"},{\"cls\":\"s2\",\"label\":\"Online Program\",\"body\":\"The same RPG-driven curriculum delivered virtually, reaching students nationwide.\"},{\"cls\":\"s3\",\"label\":\"Audio Adventures\",\"body\":\"Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions.\"},{\"cls\":\"s4\",\"label\":\"Curriculum Licensing\",\"body\":\"Other tutors, micro-schools, and homeschool co-ops license the Bifrost curriculum. Recurring annual fees or one time purchases.\"}],\"fundingEyebrow\":\"Current Funding Need\",\"fundingTitle\":\"Development & Pilot Year\",\"fundingSub\":\"12-month development & pilot goal\",\"fundingGoal\":250000,\"amountRaised\":0,\"fundingBlurb\":\"Before The Bifrost School opens its doors, we need to build the world students will enter. This funding covers the full development and pilot phase \\u2014 from narrative design and curriculum development through our first cohorts.\",\"milestonesLabel\":\"Development Milestones\",\"milestones\":[{\"num\":\"1\",\"strong\":\"Build the narrative world.\",\"body\":\"Contract writers and game designers to develop the RPG setting, characters, and story systems that anchor every subject.\"},{\"num\":\"2\",\"strong\":\"Develop the curriculum.\",\"body\":\"Collaborate with experienced educators to integrate English, Math, and Music in rigorous, standards-aligned ways.\"},{\"num\":\"3\",\"strong\":\"Run pilot cohorts.\",\"body\":\"Launch in-person and online groups to test, gather feedback, and refine before full launch.\"},{\"num\":\"4\",\"strong\":\"Hire and train founding staff.\",\"body\":\"Recruit, vet, and onboard the teachers and creative staff who will bring the Bifrost world to life and develop the training program that will define how we teach.\"},{\"num\":\"5\",\"strong\":\"Build for scale.\",\"body\":\"Finalize the platform, marketing, and licensing infrastructure for sustainable growth from Year 1 onward.\"}],\"roadmapEyebrow\":\"The Roadmap\",\"roadmapTitle\":\"Five Years to Full Capacity\",\"roadmapIntro\":\"Once the development year is complete, here is how The Bifrost School grows from its first cohorts to a self-sustaining operation.\",\"chartEyebrow\":\"Revenue Projection\",\"chartTitle\":\"Donations Needed Each Year\",\"chartBody\":\"As program revenue grows year over year, the donation need declines. By Year 5, the school approaches self-sufficiency.\",\"ctaEyebrow\":\"Join the Quest\",\"ctaTitle\":\"Support The Bifrost School\",\"ctaBody\":\"Every dollar brings a child closer to a classroom where learning feels like an adventure. Your support bridges the gap between development and a self-sustaining school.\",\"donateBtnText\":\"Express Interest in Donating\",\"contactEyebrow\":\"\",\"contactTitle\":\"Contact Us\",\"contactBody\":\"Whether you\\u2019re a prospective donor, a family interested in enrollment, or an educator interested in licensing \\u2014 we\\u2019d love to hear from you.\",\"formNameLabel\":\"Your Name\",\"formEmailLabel\":\"Email Address\",\"formInterestLabel\":\"I\\u2019m interested as a\\u2026\",\"formMessageLabel\":\"Message\",\"formSubmitText\":\"Send Message\",\"formSuccessText\":\"Thank you \\u2014 we\\u2019ll be in touch soon.\",\"formRecipient\":\"jesse@bifrostschool.com\",\"priceIP\":200,\"priceON\":300,\"cohortSize\":4,\"weeks\":48,\"rateIP\":28,\"rateON\":25,\"payroll\":18,\"platform\":80,\"marketing\":200,\"audioPrice\":12,\"licenseFee\":500,\"yearRamps\":[{\"ipC\":2,\"onC\":3,\"audioT\":1,\"audioU\":20,\"lic\":0,\"label\":\"Launch\",\"note\":\"Opening with 3+3 cohorts at roughly 40% capacity. Donations remain essential as the program builds its audience.\"},{\"ipC\":4,\"onC\":4,\"audioT\":3,\"audioU\":35,\"lic\":2,\"label\":\"Traction\",\"note\":\"Growing to 4+4 cohorts. First licensees onboard. Donation need declining.\"},{\"ipC\":4,\"onC\":7,\"audioT\":5,\"audioU\":60,\"lic\":6,\"label\":\"Growth\",\"note\":\"Near full in-person capacity. Online cohorts growing. Licensing and audio becoming meaningful.\"},{\"ipC\":4,\"onC\":9,\"audioT\":8,\"audioU\":90,\"lic\":12,\"label\":\"Scale\",\"note\":\"Approaching full capacity. Product revenue growing. Donation need closing significantly.\"},{\"ipC\":4,\"onC\":11,\"audioT\":10,\"audioU\":120,\"lic\":18,\"label\":\"Capacity\",\"note\":\"Full scale. Four revenue streams working together. The school approaches self-sufficiency.\"}],\"tiers\":[{\"amount\":100,\"name\":\"Apprentice\",\"desc\":\"Covers one month of curriculum materials \\u2014 dice, maps, and props for a full pilot cohort.\",\"featured\":false},{\"amount\":500,\"name\":\"Adventurer\",\"desc\":\"Funds one week of the narrative designer\\u2019s time building the original fantasy world.\",\"featured\":false},{\"amount\":2500,\"name\":\"Champion\",\"desc\":\"Covers one full month of the educator contractor\\u2019s time running and refining pilot cohorts.\",\"featured\":true},{\"amount\":10000,\"name\":\"Legendary\",\"desc\":\"Funds roughly one month of full development operations \\u2014 keeping the school on track toward launch.\",\"featured\":false},{\"amount\":50000,\"name\":\"Realm Builder\",\"desc\":\"Funds one full quarter of the development year \\u2014 a transformational investment in getting the school built.\",\"featured\":false}],\"donorPassword\":\"bifrost2026!\",\"wmudCards\":[{\"title\":\"Role-playing is immersive\",\"body\":\"Small groups of 4\\u20136 students huddle around a table, creating and roleplaying fantasy characters that go on epic quests.\"},{\"title\":\"Learning is driven by a quest\",\"body\":\"Traditional education presents learning as tasks with no context. At The Bifrost School, learning is driven by a quest.\"},{\"title\":\"Academics are seamlessly integrated\",\"body\":\"Understanding ecology might be integral to helping a group of Druids; knowledge of political systems might help students form the government of a new fantasy city. <br><br>It\\u2019s so seamless, they won\\u2019t realize it\\u2019s \\u201cschool.\\u201d\"},{\"title\":\"Learning content is the magic\",\"body\":\"<ul class=\\\"wmud-list\\\"><li><strong>Language:</strong> Writing \\u201cApple\\u201d with the appropriate magical ink might conjure one.</li><li><strong>Math:</strong> A multiplication spell might turn that apple into many.</li><li><strong>Music:</strong> Rhythmic movement, as an animating force, might lift it into the air.</li></ul>\"}],\"missionAttr\":\"Jesse Livingston | Founder\",\"budgetTitle\":\"18-Month Development Plan\",\"budgetSub\":\"Pilot Year Budget Breakdown\",\"budgetTotal\":250000,\"budgetFiscalRate\":3,\"budgetNote\":\"Contractor hours are front-loaded during the build phase then taper. Educator engages once pilots launch. Fiscal sponsor fee at 8% of total raise (Fractured Atlas).\",\"budgetLines\":[{\"section\":\"People\",\"items\":[{\"label\":\"Founder salary\",\"basis\":\"$160k/yr \\u00d7 12 months\",\"amount\":160000},{\"label\":\"Narrative + game design contractor\",\"basis\":\"$60/hr \\u00d7 15hr/wk \\u00d7 20 wks\",\"amount\":18000},{\"label\":\"Educator contractor\",\"basis\":\"$45/hr \\u00d7 8hr/wk \\u00d7 20 wks\",\"amount\":7200}]},{\"section\":\"Formation & Legal\",\"items\":[{\"label\":\"LLC/TN registration\",\"basis\":\"Tennessee filing + registered agent\",\"amount\":800},{\"label\":\"Legal (agreements + contracts)\",\"basis\":\"Attorney flat fee est.\",\"amount\":3500},{\"label\":\"Fiscal sponsor fee\",\"basis\":\"8% of $250,000 raised (Fractured Atlas)\",\"amount\":20000}]},{\"section\":\"Operations\",\"items\":[{\"label\":\"Business insurance (GL + E&O)\",\"basis\":\"$150/mo \\u00d7 12\",\"amount\":1800},{\"label\":\"Curriculum materials & supplies\",\"basis\":\"Dice, maps, print, props\",\"amount\":2500},{\"label\":\"Online platform (Zoom, tools)\",\"basis\":\"$80/mo \\u00d7 12\",\"amount\":960},{\"label\":\"Marketing & outreach\",\"basis\":\"$200/mo \\u00d7 12\",\"amount\":2400}]},{\"section\":\"Contingency\",\"items\":[{\"label\":\"Contingency reserve (10%)\",\"basis\":\"Buffer on pre-fee costs\",\"amount\":20760}]}],\"heroSubLede\":\"The magic makes it real.\",\"fiscalNote2\":\"Donations will be tax-deductible under IRC \\u00a7501(c)(3) upon approval\",\"founderVideoFile\":\"\",\"founderVideoEyebrow\":\"From the Founder\",\"founderVideoCaption\":\"\",\"aboutStoryTitle\":\"How The Bifrost School Came to Be\",\"aboutStory\":\"In 2021, after leaving my job at Netflix disillusioned and burnt out, I wrote a series of letters from the future \\u2014 a writing exercise where I wrote stories of imaginary people that my future self had impacted. They were OK\\u2026 but one story jumped out as markedly different.\\n\\nI told a story of Evan, a middle-schooler in San Francisco, who felt disenchanted with school, with his culture, and with his life. He was a fantasy nerd through and through who spent his afternoons dreaming of how it would feel to ride on the back of Aslan and ignoring his math homework.\\n\\nHe needed something.\\n\\nThen he saw a poster covered in beautiful fantasy artwork: \\u201cDo you love fantasy? Would you rather be in a book than at school? Step into a magical world of adventure at The Bifrost School of Fantasy.\\u201d When he arrived at the beautiful Victorian home with an ornate wooden sign that read, \\u201cThe Bifrost School: The Magic Makes it Real,\\u201d he found what he was looking for.\\n\\nIn that moment, the Bifrost School was born.\\n\\nThe Bifrost School is a place for nerds and weirdos \\u2014 kids who know somewhere inside themselves that school (and life) can be more. And it\\u2019s a place where their love of story can dance with their learning in a way they\\u2019ll never experience in traditional school.\\n\\nAs a culture, we\\u2019ve always had a fascination with magical schools. Whether it be Harry Potter, the Nevermore Academy, the School of Roke, the Long Price Quartet, or My Hero Academia \\u2014 there\\u2019s just something about a school that feels\\u2026 magical. I think we keep inventing magical schools because we want our own schools to be better.\\n\\nSo join me, and help make the Bifrost School a reality.\",\"aboutFounderTitle\":\"Jesse Livingston\",\"aboutFounderRole\":\"Founder\",\"principlesEyebrow\":\"Our Philosophy\",\"principlesTitle\":\"The bridge between the imagination and the real\",\"principlesSubtitle\":\"The Bifrost School is built on four principles \\u2014 each one a doorway between the world of the story and the world you actually live in.\",\"principles\":[{\"title\":\"Know the Magic Within You\",\"body\":\"Discover the real-life magic abilities you already possess. Creativity, empathy, curiosity, courage \\u2014 these are not soft skills. They are the most powerful forces in the world, and they live in you.\"},{\"title\":\"See the Wonder Around You\",\"body\":\"The world is stranger and more beautiful than it appears. Learning to see it that way \\u2014 to notice, to question, to be genuinely surprised \\u2014 changes everything about how you move through it.\"},{\"title\":\"Face the Challenge Before You\",\"body\":\"Every obstacle is a quest in disguise. The hard thing in front of you is not in the way \\u2014 it is the way. The Bifrost School trains students to turn toward difficulty, not away from it.\"},{\"title\":\"Live the Adventure That Calls You\",\"body\":\"There is a real-life adventure out there waiting for you. Not a metaphor \\u2014 an actual path, shaped by your choices, your skills, and your willingness to step forward. School is where you prepare for it.\"}],\"wmudTitle\":\"School as Adventure\",\"wmudEyebrow\":\"What Makes Us Different\",\"onlineStudentsPerCohort\":5,\"inPersonStudentsPerCohort\":5}");
+;
+;
+;
+;
+;;;;;;;
 const CFG={...D,...(getConfig()||{})};
 const FIXED={insurance:1200,supplies:1800,admin:1200,misc:1800};
 const FOUNDER=170000;
@@ -673,8 +796,19 @@ function injectContent(){
   document.title=(CFG.schoolName||'The Bifrost School')+' — A Five-Year Vision';
   // nav-school-name is now an SVG logo — no text injection
   st('d-school-name',CFG.schoolName||'The Bifrost School');
-  st('d-hero-lede',CFG.heroLede||'');  st('d-mission-quote',CFG.missionQuote||'');
-  st('d-mission-attr',CFG.missionAttr||'Jesse Livingston \u2014 Founder');
+  st('d-hero-lede',CFG.heroLede||'');
+  st('d-hero-tagline',CFG.heroSubLede||'');  st('d-mission-quote',CFG.missionQuote||'');
+  st('d-mission-attr',CFG.missionAttr||'Jesse Livingston | Founder');
+  if(CFG.principles&&CFG.principles.length){const pg=document.getElementById('d-principles-grid');if(pg){pg.innerHTML=CFG.principles.map(p=>'<div class="principle-card"><div class="principle-title">'+p.title+'</div><div class="principle-body">'+p.body+'</div></div>').join('');}}
+  st('d-principles-eyebrow',CFG.principlesEyebrow||'Our Philosophy');
+  // d-principles-title is hardcoded with line break
+  st('d-principles-subtitle',CFG.principlesSubtitle||'');
+  const fvSrc=document.getElementById('founder-video-src');
+  const fvVideo=document.getElementById('founder-video');
+  const fvHolder=document.getElementById('founder-video-placeholder');
+  if(CFG.founderVideoFile){if(fvSrc)fvSrc.src=CFG.founderVideoFile;if(fvVideo){fvVideo.load();fvVideo.style.display='block';}if(fvHolder)fvHolder.style.display='none';}
+  st('d-founder-video-eyebrow',CFG.founderVideoEyebrow||'From the Founder');
+  st('d-founder-video-caption',CFG.founderVideoCaption||'');
   st('d-teach-eyebrow',CFG.teachEyebrow||'');
   st('d-teach-title',CFG.teachTitle||'');
   ht('d-teach-body',(CFG.teachBody||'').split('\n\n').map(p=>'<p>'+p+'</p>').join(''));
@@ -709,7 +843,11 @@ function injectContent(){
   st('d-cta-title',CFG.ctaTitle||'');
   ht('d-cta-body',CFG.ctaBody||'');
   st('d-donate-btn-text',CFG.donateBtnText||'');
-  st('d-fiscal-note',CFG.fiscalNote||'');
+  ht('d-about-story',CFG.aboutStory?CFG.aboutStory.split('\n\n').map(p=>'<p>'+p+'</p>').join(''):'');
+  st('d-about-story-title',CFG.aboutStoryTitle||'');
+  st('d-about-founder-name',CFG.aboutFounderTitle||'Jesse Livingston');
+  st('d-about-founder-role',CFG.aboutFounderRole||'Founder');
+  ht('d-fiscal-note',(CFG.fiscalNote||'')+(CFG.fiscalNote2?'<br>'+CFG.fiscalNote2:''));
   st('d-contact-eyebrow',CFG.contactEyebrow||'');
   st('d-contact-title',CFG.contactTitle||'');
   ht('d-contact-body',CFG.contactBody||'');
@@ -722,9 +860,9 @@ function injectContent(){
   // email not shown in footer
   const cab=document.getElementById('d-contact-art-bg');if(cab)cab.style.backgroundImage='url(images/contact-art-bg.jpg)';
   const db=document.getElementById('d-donate-btn');
-  if(db&&CFG.donateUrl&&CFG.donateUrl!=='#'){db.onclick=()=>window.open(CFG.donateUrl,'_blank');}
+  if(db&&CFG.donateUrl&&CFG.donateUrl!=='#'){db.href=CFG.donateUrl;db.target='_blank';}
   const fb=document.getElementById('float-donate-btn');
-  if(fb&&CFG.donateUrl&&CFG.donateUrl!=='#'){fb.onclick=()=>window.open(CFG.donateUrl,'_blank');}
+  if(fb&&CFG.donateUrl&&CFG.donateUrl!=='#'){fb.href=CFG.donateUrl;fb.target='_blank';}
   ht('d-tiers',(CFG.tiers||[]).map((t,i)=>'<div class="tier'+(t.featured?' featured':'')+((CFG.tiers.length===5&&i>=3)?' tier-offset':'')+'"><span class="tier-amount">$'+fmt(t.amount)+'</span><span class="tier-name">'+t.name+'</span><div class="tier-desc">'+t.desc+'</div></div>').join(''));
   const nav=document.getElementById('year-nav');
   if(nav)nav.innerHTML=(CFG.yearRamps||[]).map((r,i)=>'<button class="yr-btn'+(i===0?' active':'')+'" data-yr="'+i+'">Year '+(i+1)+'<small>'+r.label+'</small></button>').join('');
@@ -772,12 +910,9 @@ function renderYear(i){
     '<div class="yr-art-band-note">'+R.note+'</div>'+
     '</div></div></div>'+
     '<div class="yr-metrics" style="margin-top:2px">'+
-    '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.tuit)+'</span><div class="ml">Tuition</div>'+
-    '<div class="yr-metric-detail" style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500">'+R.ipC+' in-person + '+R.onC+' online cohorts &mdash; '+R.totalSt+' students</div></div>'+
-    '<div class="yr-metric"><span class="mv blue">'+fmtC(R.audio)+'</span><div class="ml">Audio</div>'+
-    '<div class="yr-metric-detail" style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500">'+R.audioTitles+' title'+(R.audioTitles===1?'':'s')+' &mdash; '+fmt(R.audioUnits,0)+' units sold per title</div></div>'+
-    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Licensing</div>'+
-    '<div class="yr-metric-detail" style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500">'+(R.licensees===0?'Launches Year 2':R.licensees+' licensee'+(R.licensees===1?'':'s')+' &mdash; '+fmtC(CFG.licenseFee)+'/yr each')+'</div></div>'+
+    '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.tuit)+'</span><div class="ml">Tuition</div></div>'+
+    '<div class="yr-metric"><span class="mv blue">'+fmtC(R.audio)+'</span><div class="ml">Audio</div></div>'+
+    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Licensing</div></div>'+
     '</div>'+
     '<div class="funding-goal-box">'+
     '<div class="fg-title">Year '+(i+1)+' Donation Goal</div>'+
@@ -790,7 +925,11 @@ function renderYear(i){
       :'<div class="fg-break-even">Program revenue covers all costs</div>'
     )+
     '</div>'+
-    '';
+    '<div class="milestone-grid">'+
+    '<div class="milestone"><div class="mt"><strong>'+R.ipC+' in-person + '+R.onC+' online cohorts</strong> — '+R.totalSt+' students.</div></div>'+
+    '<div class="milestone"><div class="mt"><strong>'+R.audioTitles+' audio titles</strong> — '+fmt(R.audioUnits,0)+' units sold per title.</div></div>'+
+    '<div class="milestone"><div class="mt"><strong>'+R.licensees+' curriculum licensees</strong>'+(R.licensees===0?' — licensing launches Year 2':' — '+fmtC(R.lic)+' recurring.')+'</div></div>'+
+    '</div>';
 }
 
 function renderChart(){
@@ -821,19 +960,6 @@ function getDonorPassword(){ return CFG.donorPassword || 'bifrost'; }
 
 
 // ── SITE GATE ─────────────────────────────────────────────────────────────────
-const SITE_AUTH_KEY = 'bifrost_site_auth';
-function checkSitePassword(){
-  const val = document.getElementById('site-pw-input').value;
-  if(val === (CFG.donorPassword || 'bifrost')){
-    sessionStorage.setItem(SITE_AUTH_KEY, '1');
-    const g = document.getElementById('site-gate');
-    if(g) g.remove();
-  } else {
-    const err = document.getElementById('site-pw-err');
-    err.style.display = 'block';
-    setTimeout(() => err.style.display = 'none', 2500);
-  }
-}
 
 // ── DEVELOPMENT TAB PASSWORD ──────────────────────────────────────────────────
 const DEV_AUTH_KEY = 'bifrost_dev_auth';
@@ -862,7 +988,6 @@ function switchTab(name){
   // Check dev password gate
   if(name==='development' && sessionStorage.getItem(DEV_AUTH_KEY)!=='1'){
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
-  document.querySelectorAll('.mobile-nav .tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
     document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));
     window.scrollTo({top:0,behavior:'instant'});
     // Show gate, hide content
@@ -880,7 +1005,6 @@ function switchTab(name){
     setTimeout(()=>switchYear(curYear||0),50);
   }
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
-  document.querySelectorAll('.mobile-nav .tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));
   window.scrollTo({top:0,behavior:'instant'});
   // Trigger reveals for newly visible panel
@@ -924,17 +1048,7 @@ function openBudgetModal(){
   document.getElementById('budget-modal').classList.add('open');
 }
 document.addEventListener('DOMContentLoaded',()=>{
-  // Site gate
-  const sg=document.getElementById('site-gate');
-  if(sg){
-    if(sessionStorage.getItem(SITE_AUTH_KEY)==='1'){
-      sg.remove();
-    } else {
-      document.getElementById('site-pw-btn').addEventListener('click',checkSitePassword);
-      document.getElementById('site-pw-input').addEventListener('keydown',e=>{if(e.key==='Enter')checkSitePassword();});
-    }
-  }
-
+  // Site gate removed
 
   // Budget modal listeners
   const bm=document.getElementById('budget-modal');
@@ -943,22 +1057,15 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){const m=document.getElementById('budget-modal');if(m)m.classList.remove('open');}});
 
-  // Hamburger menu
   const hamburger=document.getElementById('hamburger-btn');
   const mobileNav=document.getElementById('mobile-nav');
   if(hamburger&&mobileNav){
-    hamburger.addEventListener('click',()=>{
-      hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-    });
+    hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileNav.classList.toggle('open');});
     mobileNav.querySelectorAll('.tab-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        switchTab(btn.dataset.tab);
-        hamburger.classList.remove('open');
-        mobileNav.classList.remove('open');
-      });
+      btn.addEventListener('click',()=>{switchTab(btn.dataset.tab);hamburger.classList.remove('open');mobileNav.classList.remove('open');});
     });
   }
+  document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
   injectContent();
   switchYear(0);
 
@@ -987,18 +1094,11 @@ document.addEventListener('DOMContentLoaded',()=>{
       const json=await res.json();
       if(json.success){
         this.reset();
-        successDiv.style.display='block';
+        if(successDiv){successDiv.style.display='block';setTimeout(()=>successDiv.style.display='none',6000);}
         btn.querySelector('span').textContent=CFG.formSubmitText||'Send Message';
         btn.disabled=false;
-        setTimeout(()=>successDiv.style.display='none',6000);
-      } else {
-        btn.querySelector('span').textContent='Error — please try again';
-        btn.disabled=false;
-      }
-    }catch(err){
-      btn.querySelector('span').textContent='Error — please try again';
-      btn.disabled=false;
-    }
+      }else{btn.querySelector('span').textContent='Error — please try again';btn.disabled=false;}
+    }catch(err){btn.querySelector('span').textContent='Error — please try again';btn.disabled=false;}
   });
 });
 </script>
