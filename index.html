@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="The Bifrost School is an RPG-driven tutoring program for homeschool and alternative education families. Students learn English, Math, and Music through immersive tabletop adventure — where every lesson is a quest.">
+<meta name="keywords" content="homeschool, homeschooling, alternative education, online school, RPG learning, tabletop learning, tutoring, small group learning, project-based learning, English tutoring, math tutoring, music education, homeschool co-op, microschool, unschooling, secular homeschool, online tutoring, immersive education">
+<meta property="og:title" content="The Bifrost School — RPG-Driven Learning for Homeschool Families">
+<meta property="og:description" content="Small-group tutoring where English, Math, and Music are taught through tabletop RPG adventure. In-person and online cohorts available.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Bifrost School">
+<meta name="twitter:description" content="Where every lesson is a quest. RPG-driven tutoring for homeschool and alternative education families.">
+<link rel="canonical" href="https://bifrostschool.com">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 36'%3E%3Cpath d='M 4 34 A 28 28 0 0 1 60 34' fill='none' stroke='%23d4a84b' stroke-width='7' stroke-linecap='butt'/%3E%3Cpath d='M 32 34 A 28 28 0 0 1 88 34' fill='none' stroke='%23d4a84b' stroke-width='7' stroke-linecap='butt'/%3E%3Cpath d='M 60 34 A 28 28 0 0 1 116 34' fill='none' stroke='%23d4a84b' stroke-width='7' stroke-linecap='butt'/%3E%3C/svg%3E"><path d="M 4 34 A 28 28 0 0 1 60 34" fill="none" stroke="%23d4a84b" stroke-width="7" stroke-linecap="butt"/><path d="M 32 34 A 28 28 0 0 1 88 34" fill="none" stroke="%23d4a84b" stroke-width="7" stroke-linecap="butt"/><path d="M 60 34 A 28 28 0 0 1 116 34" fill="none" stroke="%23d4a84b" stroke-width="7" stroke-linecap="butt"/></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bifrost School</title>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Source+Sans+3:wght@300;400;600;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e18;--bg2:#0f1520;--bg3:#141c2e;--bg4:#1a2338;
+  --ink:#ffffff;--ink2:#ffffff;--ink3:#c0b8a8;
+  --gold:#d4a84b;--gold2:#f0c96a;--gold3:#fff0a8;
+  --blue:#2a4a8a;--blue2:#3a6abf;--blue3:#6a9adf;
+  --teal:#1a5a5a;--teal2:#2a8080;--teal3:#4ab0b0;
+  --green:#5cd68c;--red:#e06060;
+  --border:rgba(212,168,75,.15);--border2:rgba(212,168,75,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(1px 1px at 15% 12%,rgba(255,255,255,.2) 0%,transparent 100%),radial-gradient(1px 1px at 72% 8%,rgba(255,255,255,.15) 0%,transparent 100%),radial-gradient(2px 2px at 82% 18%,rgba(212,168,75,.22) 0%,transparent 100%),radial-gradient(2px 2px at 22% 62%,rgba(106,154,223,.18) 0%,transparent 100%);pointer-events:none;z-index:0}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+.container{max-width:860px;margin:0 auto;padding:0 28px}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 28px}
+
+/* TYPOGRAPHY */
+h1,h2,.display{font-family:'Berkshire Swash',serif;font-weight:normal}
+.eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal3);font-weight:700;margin-bottom:14px}
+.section-title{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(26px,4vw,46px);color:#fff;line-height:1.15;margin-bottom:20px}
+.rule{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),var(--teal3));border-radius:1px;margin:18px 0 26px}
+.section-body{font-size:clamp(16px,1.7vw,19px);color:#fff;max-width:660px;line-height:1.75;font-weight:400}
+.section-body p{margin-bottom:1em}
+
+/* ── TAB NAVIGATION ─────────────────────────────────────────────────── */
+.tab-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,24,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:stretch;justify-content:flex-start;gap:0}
+.tab-btn{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:18px 28px;background:transparent;border:none;color:rgba(255,255,255,.45);cursor:pointer;transition:all .2s;position:relative;white-space:nowrap;text-decoration:none}
+.tab-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .2s}
+.tab-logo::after{display:none}
+.tab-btn:hover{color:rgba(255,255,255,.75)}
+.tab-btn.active{color:var(--gold2)}.tab-btn.active::after{transform:scaleX(1)}
+.tab-logo{font-family:'Berkshire Swash',serif;font-size:16px;color:var(--gold2);padding:14px 28px;letter-spacing:.02em;border-right:1px solid var(--border);text-transform:none;font-weight:normal;text-decoration:none !important;margin-right:auto;flex-shrink:0}
+@media(max-width:640px){
+  .tab-logo{display:none}
+  .tab-btn{padding:16px 14px;font-size:10px;letter-spacing:.1em}
+}
+
+/* TAB PANELS */
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.tab-panel.active .section:first-child,.tab-panel.active .contact-section:first-child,.tab-panel.active .funding-section:first-child,.tab-panel.active .donate-section:first-child{padding-top:calc(56px + 60px)}
+
+/* ── SECTIONS ───────────────────────────────────────────────────────── */
+.section{padding:88px 0;position:relative}
+.section.dark{background:var(--bg2)}
+.section.darker{background:var(--bg3)}
+.section.plan{background:#0e1628}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 28px 70px;position:relative;overflow:hidden}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#0a0e18}
+#bg-video{position:absolute;top:50%;left:50%;width:177.8vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);border:none;opacity:.65;pointer-events:none;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,24,.6) 0%,rgba(10,14,24,.35) 45%,rgba(10,14,24,.88) 80%,rgba(10,14,24,1) 100%);z-index:1;pointer-events:none}
+.hero-content{position:relative;z-index:2}
+.hero-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#fff;font-weight:700;margin-bottom:24px;opacity:.8}
+.hero h1{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(42px,9vw,96px);color:var(--gold2);letter-spacing:.02em;line-height:1.0;margin-bottom:32px;text-shadow:0 0 80px rgba(212,168,75,.4),0 0 160px rgba(42,74,138,.5)}
+.hero-lede{font-size:clamp(17px,2.2vw,22px);font-weight:400;color:#fff;max-width:560px;margin:0 auto 44px;line-height:1.7}
+.scroll-cue{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.35);animation:bob 2.5s ease-in-out infinite;font-weight:600}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* MISSION */
+.mission{position:relative;overflow:hidden}
+.mission-img-wrap{position:relative;width:75%;height:340px;overflow:hidden;margin:0 auto;border-radius:4px}
+.mission-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:brightness(.35)}
+/* fade left/right edges */
+.mission-img-wrap::before,.mission-img-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+.mission-img-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.mission-img-wrap::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.mission-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 80px;z-index:3;background:linear-gradient(90deg,#0a0e18 0%,rgba(10,14,24,.15) 20%,rgba(10,14,24,.15) 80%,#0a0e18 100%)}
+.mission blockquote{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(20px,3.2vw,34px);color:#fff;max-width:760px;line-height:1.5;text-shadow:0 2px 24px rgba(0,0,0,.95)}
+.mission-attr{display:block;margin-top:16px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,75,.7);font-weight:600}
+
+/* WHAT GRID */
+.what-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;margin-top:36px}
+.what-card{background:var(--bg4);padding:28px 24px;border:1px solid var(--border2);transition:background .2s,border-color .2s}
+.what-card:hover{background:rgba(42,74,138,.12);border-color:var(--border)}
+.what-card .wc-title{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700}
+.what-card .wc-body{font-size:15px;color:#fff;line-height:1.65;font-weight:400}
+
+/* REVENUE STREAMS 2x2 */
+.streams-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:36px}
+@media(max-width:580px){.streams-grid{grid-template-columns:1fr}}
+.stream-card{background:var(--bg4);border:1px solid var(--border2);padding:30px 26px;transition:background .2s,border-color .2s;position:relative;overflow:hidden}
+.stream-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.stream-card.s1::before{background:var(--gold)}
+.stream-card.s2::before{background:var(--teal3)}
+.stream-card.s3::before{background:var(--blue3)}
+.stream-card.s4::before{background:var(--green)}
+.stream-card:hover{background:rgba(42,74,138,.1);border-color:var(--border)}
+.sc-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.stream-card.s1 .sc-label{color:var(--gold2)}
+.stream-card.s2 .sc-label{color:var(--teal3)}
+.stream-card.s3 .sc-label{color:var(--blue3)}
+.stream-card.s4 .sc-label{color:var(--green)}
+.sc-body{font-size:15px;color:#fff;line-height:1.65;font-weight:400}
+
+/* FUNDING NEED — no edge fade, full image */
+.funding-section{position:relative;overflow:hidden;padding:90px 28px}
+.funding-art{position:absolute;inset:0;background-size:cover;background-position:center 22%;filter:brightness(.65)}
+.funding-art-overlay{position:absolute;inset:0;background:rgba(10,14,24,.72)}
+.funding-content{position:relative;z-index:2;max-width:860px;margin:0 auto}
+.funding-goal-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px;align-items:start}
+@media(max-width:700px){.funding-goal-hero{grid-template-columns:1fr}}
+.funding-amount{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(44px,6.5vw,80px);color:var(--gold2);line-height:1;margin-bottom:6px;text-shadow:0 0 40px rgba(212,168,75,.3)}
+.funding-sub{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:28px;font-weight:700}
+.funding-bar-wrap{margin-bottom:28px}
+.funding-bar-label{display:flex;justify-content:space-between;font-size:13px;color:#fff;margin-bottom:8px;font-weight:600}
+.funding-bar-track{height:8px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+.funding-bar-fill{height:100%;background:linear-gradient(90deg,var(--blue2),var(--teal3));border-radius:4px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.funding-blurb{font-size:clamp(15px,1.6vw,17px);color:#fff;line-height:1.75;font-weight:400}
+.milestones-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;font-weight:700}
+.milestones-list{list-style:none;padding:0}
+.milestones-list li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);align-items:flex-start}
+.milestones-list li:last-child{border-bottom:none}
+.milestone-num{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:24px;color:var(--gold);opacity:.7;flex-shrink:0;line-height:1;margin-top:2px;min-width:22px}
+.milestone-text{font-size:15px;color:#fff;line-height:1.6;font-weight:400}
+.milestone-text strong{color:#fff;font-weight:700}
+
+/* YEAR NAV */
+.year-nav{display:flex;gap:2px;border-radius:3px;overflow:hidden;border:1px solid var(--border);margin:36px 0 0}
+.yr-btn{flex:1;background:var(--bg3);border:none;border-right:1px solid var(--border);color:rgba(255,255,255,.45);font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:13px 8px;cursor:pointer;transition:all .2s;text-align:center}
+.yr-btn:last-child{border-right:none}
+.yr-btn:hover{background:var(--bg4);color:#fff}
+.yr-btn.active{background:var(--blue);color:var(--gold3)}
+.yr-btn small{display:block;font-size:9px;opacity:.6;margin-top:2px;font-weight:400;letter-spacing:.05em;font-family:'Source Sans 3',sans-serif}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* YEAR ART BAND — no side fades, full image */
+.yr-art-band{width:100%;height:320px;position:relative;overflow:hidden;margin-bottom:0}
+.yr-art-band img{width:100%;height:100%;object-fit:cover;filter:brightness(.65);transition:transform 6s ease}
+.yr-art-band:hover img{transform:scale(1.03)}
+.yr-art-band-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,24,.05) 0%,rgba(10,14,24,.6) 100%);display:flex;align-items:flex-end;padding:24px 28px}
+.yr-art-band-label{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(20px,2.5vw,30px);color:var(--gold2);text-shadow:0 2px 12px rgba(0,0,0,.9)}
+.yr-art-band-note{font-size:14px;color:rgba(255,255,255,.65);margin-top:6px;font-weight:400;line-height:1.6;max-width:600px}
+
+/* YEAR METRICS */
+.yr-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin:0 0 22px}
+.yr-metric{background:var(--bg4);border:1px solid var(--border2);padding:18px 16px;text-align:center}.yr-metric-detail{font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500}
+.yr-metric .mv{font-size:clamp(15px,1.9vw,21px);font-weight:700;display:block;margin-bottom:4px;color:#fff}
+.yr-metric .mv.green{color:var(--green)}.yr-metric .mv.red{color:var(--red)}.yr-metric .mv.gold{color:var(--gold2)}.yr-metric .mv.blue{color:var(--blue3)}.yr-metric .mv.teal{color:var(--teal3)}
+.yr-metric .ml{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700}
+
+/* FUNDING GOAL BOX — centered */
+.funding-goal-box{background:rgba(42,74,138,.12);border:1px solid rgba(58,106,191,.3);border-radius:3px;padding:28px 26px;margin:0 0 26px;text-align:center}
+.fg-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue3);margin-bottom:20px;font-weight:700}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center;margin-bottom:20px}
+@media(max-width:480px){.fg-row{grid-template-columns:1fr}}
+.fg-item .fgv{font-size:clamp(18px,2.4vw,26px);font-weight:700;display:block;margin-bottom:6px}
+.fg-item .fgl{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700}
+.fg-donation-goal{margin-top:24px;padding-top:20px;border-top:1px solid rgba(58,106,191,.3)}
+.fg-donation-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:10px;font-weight:700}
+.fg-donation-amount{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:clamp(28px,3.5vw,44px);color:var(--green)}
+.fg-break-even{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:700;padding:12px 0}
+
+/* MILESTONE GRID */
+.milestone-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:680px){.milestone-grid{grid-template-columns:1fr}}
+.milestone{padding:16px 18px;background:var(--bg4);border:1px solid var(--border2)}
+.milestone .mt{font-size:15px;color:#fff;line-height:1.6;font-weight:400}
+.milestone .mt strong{font-weight:700}
+
+/* CHART */
+.chart-bg{background:var(--bg2);padding:80px 28px}
+.chart-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;height:220px;align-items:flex-end;margin:28px 0 14px}
+.chart-col{display:flex;flex-direction:column;align-items:center;height:100%;cursor:pointer}
+.chart-col-bars{flex:1;display:flex;flex-direction:column;justify-content:flex-end;width:100%;gap:1px}
+.chart-seg{width:100%}
+.chart-seg:last-child{border-radius:3px 3px 0 0}
+.chart-col:hover .chart-seg{opacity:.7;transition:opacity .2s}
+.chart-col-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:10px;font-weight:700}
+.chart-col-don{font-size:11px;color:var(--green);margin-top:2px;font-weight:700}
+.chart-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:6px}
+.chart-legend-item{display:flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700}
+.chart-legend-dot{width:10px;height:10px;border-radius:2px}
+
+/* TOTAL RAISED BAR */
+.total-raised-bar{background:var(--bg3);padding:36px 28px 44px}
+.trb-container{max-width:1100px;margin:0 auto}
+.trb-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.trb-raised{font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--green)}
+.trb-goal{font-size:14px;color:rgba(255,255,255,.45);font-weight:600}
+.trb-pct{font-size:14px;color:var(--gold2);font-weight:700}
+.trb-track{height:10px;background:rgba(255,255,255,.08);border-radius:5px;overflow:hidden}
+.trb-fill{height:100%;background:linear-gradient(90deg,var(--blue2),var(--green));border-radius:5px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* CTA — full height art, no edge fade */
+.cta-section{position:relative;overflow:hidden;padding:120px 28px;text-align:center;min-height:620px;display:flex;align-items:center;justify-content:center}
+.cta-art{position:absolute;inset:0;background-size:cover;background-position:center center;filter:brightness(.65)}
+.cta-overlay{position:absolute;inset:0;background:rgba(10,14,24,.74)}
+.cta-content{position:relative;z-index:2;width:100%}
+.tiers{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;max-width:980px;margin:0 auto 48px}
+.tier{background:rgba(10,14,24,.72);border:1px solid var(--border2);padding:26px 20px;text-align:center;transition:all .25s;position:relative;backdrop-filter:blur(6px)}
+.tier:hover{background:rgba(42,74,138,.3);border-color:var(--border);transform:translateY(-3px)}
+.tier.featured{border-color:rgba(212,168,75,.4);box-shadow:0 0 30px rgba(212,168,75,.1)}
+.tier.featured::before{content:'FEATURED';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);font-size:8px;letter-spacing:.2em;padding:3px 10px;border-radius:0 0 3px 3px;font-weight:700}
+.tier-amount{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(20px,2.5vw,28px);color:var(--gold2);display:block;margin-bottom:5px}
+.tier-name{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;margin-bottom:10px;font-weight:700}
+.tier-desc{font-size:14px;color:#fff;line-height:1.55;font-weight:400}
+.donate-btn{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:18px 48px;background:transparent;color:var(--gold2);border:1px solid var(--gold);border-radius:2px;text-decoration:none;transition:all .25s;position:relative;font-weight:700}
+.donate-btn::before{content:'';position:absolute;inset:0;background:var(--gold);opacity:0;transition:opacity .25s;border-radius:2px}
+.donate-btn:hover{color:var(--bg)}.donate-btn:hover::before{opacity:1}
+.donate-btn span{position:relative;z-index:1}
+.fiscal-note{margin-top:20px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:600}
+
+/* CONTACT */
+.contact-section{position:relative;overflow:hidden;padding:90px 28px}
+.contact-content{max-width:560px}
+.contact-form{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:700}
+.form-field input,.form-field textarea,.form-field select{background:var(--bg3);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:14px;padding:11px 14px;outline:none;transition:border-color .2s;border-radius:2px}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--gold)}
+.form-field textarea{resize:vertical;min-height:90px}
+.form-field select option{background:var(--bg3)}
+.submit-btn{font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:14px 36px;background:transparent;border:1px solid var(--gold);color:var(--gold2);cursor:pointer;border-radius:2px;transition:all .25s;align-self:flex-start;position:relative;font-weight:700}
+.submit-btn::before{content:'';position:absolute;inset:0;background:var(--gold);opacity:0;transition:opacity .25s;border-radius:2px}
+.submit-btn:hover{color:var(--bg)}.submit-btn:hover::before{opacity:1}
+.submit-btn span{position:relative;z-index:1}
+.form-success{display:none;padding:16px 20px;background:rgba(92,214,140,.1);border:1px solid rgba(92,214,140,.3);color:var(--green);font-size:14px;border-radius:2px;margin-top:8px}
+.form-success.show{display:block}
+
+
+/* Contact art background */
+.contact-art-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;filter:brightness(.65)}
+.contact-art-overlay{position:absolute;inset:0;background:rgba(10,14,24,.65)}
+.contact-content{position:relative;z-index:2;max-width:560px}
+
+/* FOOTER */
+footer{background:var(--bg);padding:36px 0;text-align:center;border-top:1px solid var(--border2);width:100%;position:relative}
+.footer-inner{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:600}
+footer a{color:rgba(255,255,255,.45);text-decoration:none}
+footer a:hover{color:var(--gold2)}
+
+/* FLOAT DONATE */
+.float-donate{position:fixed;bottom:28px;right:28px;z-index:200;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:13px 22px;background:var(--gold);color:var(--bg);border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 4px 24px rgba(212,168,75,.4);transition:all .25s;font-weight:700}
+.float-donate:hover{background:var(--gold2);transform:translateY(-2px)}
+@media(max-width:480px){.float-donate{bottom:14px;right:14px;padding:10px 16px;font-size:10px}}
+
+
+/* PASSWORD GATE */
+.pw-input:focus{border-color:var(--gold)}
+/* PILLARS */
+@media(max-width:700px){}
+@media(max-width:420px){}
+/* WHAT MAKES US DIFFERENT */
+.wmud-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:36px}
+@media(max-width:640px){.wmud-grid{grid-template-columns:1fr}}
+.wmud-card{background:var(--bg4);border:1px solid var(--border2);padding:28px 26px;transition:background .2s}
+
+.wmud-card--wide{grid-column:1/-1}
+.wmud-title{font-size:16px;font-weight:700;color:var(--gold2);margin-bottom:12px;line-height:1.3}
+.wmud-body{font-size:16px;color:#fff;line-height:1.7;font-weight:400}
+.wmud-list{list-style:none;padding:0;margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.wmud-list li{font-size:14px;color:#fff;padding-left:14px;position:relative}
+.wmud-list li::before{content:'·';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+
+/* DEV GATE STYLES */
+.pw-box{background:var(--bg3);border:1px solid var(--border);padding:40px 36px;text-align:center;position:relative;border-radius:3px}
+.pw-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue2),var(--gold),var(--teal3))}
+.pw-title{font-family:'Berkshire Swash',serif;font-size:clamp(20px,3vw,28px);color:var(--gold2);margin-bottom:8px;font-weight:normal}
+.pw-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:24px;font-weight:400;letter-spacing:.03em}
+.pw-input{width:100%;background:var(--bg4);border:1px solid var(--border2);color:#fff;font-size:16px;padding:12px 16px;outline:none;border-radius:2px;text-align:center;letter-spacing:.12em;transition:border-color .2s;font-family:'Source Sans 3',sans-serif}
+.pw-input:focus{border-color:var(--gold)}
+.pw-btn{width:100%;margin-top:12px;padding:13px;background:var(--gold);color:var(--bg);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;border-radius:2px;transition:background .2s;font-family:'Source Sans 3',sans-serif}
+.pw-btn:hover{background:var(--gold2)}
+.pw-err{color:var(--red);font-size:12px;margin-top:10px;letter-spacing:.05em;display:none;font-weight:600}
+
+
+
+.tiers .tier{grid-column:span 2}
+.tiers .tier.tier-offset:nth-child(4){grid-column:2/span 2}
+
+/* ── MOBILE ADJUSTMENTS ─────────────────────────────────────────── */
+@media(max-width:640px){
+  /* 1. Font size +2px across the board */
+  body{font-size:19px}
+  .section-body{font-size:18px}
+  .wmud-body{font-size:18px}
+  .sc-body{font-size:17px}
+  .what-card .wc-body{font-size:17px}
+  .milestone .mt{font-size:17px}
+  .tier-desc{font-size:16px}
+
+  /* 2. Roadmap section — match container padding to surrounding sections */
+  .section.plan .container-wide{padding:0 28px}
+  .section.plan .container{padding:0}
+
+  /* 3. Donation tiers — single column stack */
+  .tiers{grid-template-columns:1fr !important}
+  .tiers .tier{grid-column:span 1 !important}
+  .tiers .tier.tier-offset{grid-column:span 1 !important}
+}
+
+/* Budget modal */
+#budget-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px}
+#budget-modal.open{display:flex}
+.budget-modal-box{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:32px;max-width:780px;width:100%;max-height:88vh;overflow-y:auto;position:relative}
+.budget-modal-box
+/* ── HAMBURGER MENU ──────────────────────────────────────────── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;padding:14px 16px;cursor:pointer;background:transparent;border:none;margin-left:auto;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:#d4a84b;border-radius:1px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:56px;left:0;right:0;z-index:99;background:rgba(10,14,24,.97);border-bottom:1px solid var(--border);flex-direction:column;padding:8px 0}
+.mobile-nav.open{display:flex}
+.mobile-nav .tab-btn{padding:14px 28px;text-align:left;border-bottom:none;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+.mobile-nav .tab-btn:hover,.mobile-nav .tab-btn.active{color:var(--gold2)}
+
+@media(max-width:640px){
+  /* Hide desktop nav tabs, show hamburger */
+  .tab-nav .tab-btn:not(.tab-logo){display:none}
+  .tab-logo .bifrost-school-text{display:none}
+  .hamburger{display:flex}
+  /* Blockquote — less compression on mobile */
+  blockquote{font-size:clamp(17px,5vw,24px);padding:0 12px}
+  .mission-overlay{padding:28px 24px}
+}
+::-webkit-scrollbar{width:5px}
+.budget-modal-box::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
+.bm-close{position:absolute;top:14px;right:18px;background:transparent;border:none;color:rgba(255,255,255,.5);font-size:22px;cursor:pointer;line-height:1;padding:4px 8px}
+.bm-close:hover{color:#fff}
+.bm-title{font-family:'Berkshire Swash',serif;font-size:clamp(18px,2.5vw,26px);color:var(--gold2);margin-bottom:6px;font-weight:normal}
+.bm-sub{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal3);margin-bottom:22px;font-weight:700}
+.bm-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.bm-metric{background:var(--bg3);padding:14px 16px;border:1px solid var(--border2)}
+.bm-metric .ml{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:4px;font-weight:700}
+.bm-metric .mv{font-size:clamp(18px,2.2vw,24px);font-weight:700;color:#fff}
+.bm-table{width:100%;border-collapse:collapse;font-size:13px}
+.bm-table th{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:6px 8px;border-bottom:1px solid var(--border);text-align:left;font-weight:700}
+.bm-table th:last-child{text-align:right}
+.bm-table td{padding:7px 8px;border-bottom:0.5px solid var(--border2);color:#fff;font-size:13px}
+.bm-table td:last-child{text-align:right;font-weight:600}
+.bm-table td:nth-child(2){color:rgba(255,255,255,.5);font-size:11px}
+.bm-section{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);padding:10px 8px 4px;border-bottom:1px solid var(--border);font-weight:700}
+.bm-subtotal td{font-weight:700;border-top:1px solid var(--border);border-bottom:none;padding-top:10px}
+.bm-total td{font-size:15px;font-weight:700;border-top:1px solid rgba(255,255,255,.3);padding-top:12px}
+.bm-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:16px;line-height:1.65}
+.see-plan-btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:11px 24px;background:transparent;border:1px solid rgba(212,168,75,.5);color:var(--gold2);cursor:pointer;border-radius:2px;transition:all .2s;margin-top:18px;font-weight:700}
+.see-plan-btn:hover{background:rgba(212,168,75,.1);border-color:var(--gold)}
+@media(max-width:580px){.bm-metrics{grid-template-columns:1fr}.budget-modal-box{padding:20px}}
+
+/* ── HAMBURGER MENU ──────────────────────────────────────────── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;padding:14px 16px;cursor:pointer;background:transparent;border:none;margin-left:auto;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:#d4a84b;border-radius:1px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:56px;left:0;right:0;z-index:99;background:rgba(10,14,24,.97);border-bottom:1px solid var(--border);flex-direction:column;padding:8px 0}
+.mobile-nav.open{display:flex}
+.mobile-nav .tab-btn{padding:14px 28px;text-align:left;border-bottom:none;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+.mobile-nav .tab-btn:hover,.mobile-nav .tab-btn.active{color:var(--gold2)}
+
+@media(max-width:640px){
+  /* Hide desktop nav tabs, show hamburger */
+  .tab-nav .tab-btn:not(.tab-logo){display:none}
+  .tab-logo .bifrost-school-text{display:none}
+  .hamburger{display:flex}
+  /* Blockquote — less compression on mobile */
+  blockquote{font-size:clamp(17px,5vw,24px);padding:0 12px}
+  .mission-overlay{padding:28px 24px}
+}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- SITE GATE -->
+<div id="site-gate" style="position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center">
+  <div class="pw-box" style="max-width:380px;width:100%">
+    <div class="pw-title">The Bifrost School</div>
+    <div class="pw-sub">Private Preview</div>
+    <input class="pw-input" type="password" id="site-pw-input" placeholder="Enter passphrase">
+    <button class="pw-btn" id="site-pw-btn">Enter</button>
+    <div class="pw-err" id="site-pw-err">Incorrect passphrase</div>
+  </div>
+</div>
+
+<!-- FLOATING DONATE -->
+<button onclick="switchTab('donate')" class="float-donate" id="float-donate-btn">Donate</button>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <button class="tab-btn tab-logo" data-tab="home" id="nav-school-name" aria-label="The Bifrost School" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:10px 20px">
+    <svg width="48" height="30" viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 4 34 A 28 28 0 0 1 60 34" fill="none" stroke="#d4a84b" stroke-width="7" stroke-linecap="butt"/>
+      <path d="M 32 34 A 28 28 0 0 1 88 34" fill="none" stroke="#d4a84b" stroke-width="7" stroke-linecap="butt"/>
+      <path d="M 60 34 A 28 28 0 0 1 116 34" fill="none" stroke="#d4a84b" stroke-width="7" stroke-linecap="butt"/>
+    </svg>
+    <span class="bifrost-school-text" style="font-family:'Source Sans 3',sans-serif;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:rgba(212,168,75,.7);font-weight:700;line-height:1">BIFROST SCHOOL</span>
+  </button>
+  <div style="flex:1"></div>
+  <button class="tab-btn active" data-tab="home">Vision</button>
+  <button class="tab-btn" data-tab="development">Development</button>
+  <button class="tab-btn" data-tab="donate">Donate</button>
+  <button class="tab-btn" data-tab="contact">Contact</button>
+  <div style="width:16px"></div>
+  <button class="hamburger" id="hamburger-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <button class="tab-btn" data-tab="home">Vision</button>
+  <button class="tab-btn" data-tab="development">Development</button>
+  <button class="tab-btn" data-tab="donate">Donate</button>
+  <button class="tab-btn" data-tab="contact">Contact</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ TAB: HOME -->
+<div class="tab-panel active" id="tab-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-video-wrap">
+      <video id="bg-video" autoplay muted loop playsinline>
+        <source src="bifrost_bg.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="reveal d1" id="d-school-name">The Bifrost School</h1>
+      <p class="hero-lede reveal d2" id="d-hero-lede">Where every lesson is an adventure &mdash; and every child is the hero of their own story.</p>
+      <div class="scroll-cue reveal d3">Scroll to explore</div>
+    </div>
+  </div>
+
+
+  <!-- MISSION QUOTE -->
+  <div class="mission reveal" style="background:#0a0e18;padding:0">
+    <div class="mission-img-wrap">
+      <img id="d-mission-art" src="images/mission-art.jpg" alt="" class="mission-img">
+      <div class="mission-overlay">
+        <blockquote id="d-mission-quote"></blockquote>
+        <div class="mission-attr" id="d-mission-attr">Jesse Livingston — Founder</div>
+      </div>
+    </div>
+  </div>
+  <!-- WHAT WE TEACH -->
+  <div class="section dark">
+    <div class="container">
+      <div class="reveal"><div class="eyebrow" id="d-teach-eyebrow">The Program</div></div>
+      <h2 class="section-title reveal d1" id="d-teach-title">What We Teach &mdash; and How</h2>
+      <div class="rule reveal d2"></div>
+      <div class="section-body reveal d2" id="d-teach-body">
+        <p>The Bifrost School is a small-group tutoring program where English, Math, and Music come to life through tabletop RPG adventure.</p>
+        <p>Sessions run two hours, once per week, in groups of four to five students &mdash; offered both in-person and online.</p>
+      </div>
+      <div class="what-grid reveal d3" id="d-subject-cards"></div>
+    </div>
+  </div>
+
+
+
+  
+
+  <!-- WHAT MAKES US DIFFERENT -->
+  <div class="section" style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:url(images/section-bg.jpg);background-size:cover;background-position:70% center;filter:brightness(.18)"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="reveal"><div class="eyebrow">What Makes Us Different</div></div>
+      <h2 class="section-title reveal d1">Learning as Adventure</h2>
+      <div class="rule reveal d2"></div>
+      <div class="wmud-grid reveal d3" id="d-wmud-grid"></div>
+      </div>
+    </div>
+  </div>
+
+
+</div><!-- /tab-home -->
+
+<!-- ═══════════════════════════════════════════════ TAB: DEVELOPMENT -->
+<div class="tab-panel" id="tab-development">
+  <div id="dev-pw-gate" style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 28px">
+    <div class="pw-box" style="max-width:380px;width:100%">
+      <div class="pw-title">Development Plan</div>
+      <div class="pw-sub">This section is password protected</div>
+      <input class="pw-input" type="password" id="dev-pw-input" placeholder="Enter passphrase">
+      <button class="pw-btn" id="dev-pw-btn">Continue</button>
+      <div class="pw-err" id="dev-pw-err">Incorrect passphrase</div>
+    </div>
+  </div>
+  <div id="dev-content" style="display:none">
+  <!-- FUNDING NEED -->
+  <div class="funding-section" id="sec-funding">
+    <div class="funding-art" id="d-funding-art" style="background-image:url(images/funding-art.jpg)"></div>
+    <div class="funding-art-overlay"></div>
+    <div class="funding-content">
+      <div class="reveal"><div class="eyebrow" id="d-funding-eyebrow">Current Funding Need</div></div>
+      <h2 class="section-title reveal d1" id="d-funding-title" style="color:var(--gold2)">Development &amp; Pilot Year</h2>
+      <div class="rule reveal d2"></div>
+      <div class="funding-goal-hero reveal d2">
+        <div>
+          <div class="funding-amount" id="d-funding-amount">$300,000</div>
+          <div class="funding-sub" id="d-funding-sub">12&ndash;18 month development &amp; pilot goal</div>
+          <div class="funding-bar-wrap">
+            <div class="funding-bar-label"><span>Raised to date</span><span id="d-funding-pct">0%</span></div>
+            <div class="funding-bar-track"><div class="funding-bar-fill" id="d-funding-bar" style="width:0%"></div></div>
+          </div>
+          <p class="funding-blurb" id="d-funding-blurb"></p>
+          <button class="see-plan-btn" onclick="openBudgetModal()">See full plan &rarr;</button>
+        </div>
+        <div>
+          <div class="milestones-label" id="d-milestones-label">Development Milestones</div>
+          <ul class="milestones-list" id="d-milestones-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- REVENUE STREAMS -->
+  <div class="section darker">
+    <div class="container">
+      <div class="reveal"><div class="eyebrow" id="d-streams-eyebrow">Revenue Streams</div></div>
+      <h2 class="section-title reveal d1" id="d-streams-title">Four Ways the School Sustains Itself</h2>
+      <div class="rule reveal d2"></div>
+      <p class="section-body reveal d2" id="d-streams-body"></p>
+      <div class="streams-grid reveal d3" id="d-streams-grid"></div>
+    </div>
+  </div>
+
+<!-- 5 YEAR PLAN -->
+  <div class="section plan">
+    <div class="container-wide">
+      <div class="container">
+        <div class="reveal"><div class="eyebrow" id="d-roadmap-eyebrow">The Roadmap</div></div>
+        <h2 class="section-title reveal d1" id="d-roadmap-title">Five Years to Full Capacity</h2>
+        <div class="rule reveal d2"></div>
+        <p class="section-body reveal d2" id="d-roadmap-intro"></p>
+      </div>
+      <div class="container" style="margin-top:36px">
+        <div class="year-nav reveal d3" id="year-nav"></div>
+        <div id="year-content" class="reveal d4"></div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- CHART + TOTAL RAISED -->
+  <div class="chart-bg">
+    <div class="container">
+      <div class="reveal"><div class="eyebrow" id="d-chart-eyebrow">Revenue Projection</div></div>
+      <h2 class="section-title reveal d1" id="d-chart-title">Donations Needed Each Year</h2>
+      <div class="rule reveal d2"></div>
+      <p class="section-body reveal d2" id="d-chart-body"></p>
+      <div class="chart-wrap reveal d3" id="all-years-chart"></div>
+      <div class="chart-legend reveal d4" id="chart-legend"></div>
+    </div>
+  </div>
+  <div class="total-raised-bar reveal">
+    <div class="trb-container">
+      <div class="trb-row">
+        <div><div class="trb-raised" id="trb-raised">$0 raised</div><div class="trb-goal" id="trb-goal">of $0 total goal</div></div>
+        <div class="trb-pct" id="trb-pct">0% funded</div>
+      </div>
+      <div class="trb-track"><div class="trb-fill" id="trb-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+
+  </div>  </div>
+</div><!-- /tab-development -->
+
+<!-- ═══════════════════════════════════════════════════ TAB: DONATE -->
+<div class="tab-panel" id="tab-donate">
+  <div class="cta-section">
+    <div class="cta-art" id="d-cta-art" style="background-image:url(images/cta-art.jpg)"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <div class="container">
+        <div class="reveal"><div class="eyebrow" style="color:var(--gold)" id="d-cta-eyebrow">Join the Quest</div></div>
+        <h2 class="section-title reveal d1" style="color:var(--gold2)" id="d-cta-title">Support The Bifrost School</h2>
+        <div class="rule reveal d2" style="margin:20px auto 28px;background:linear-gradient(90deg,var(--gold),transparent)"></div>
+        <p class="section-body reveal d2" id="d-cta-body" style="margin:0 auto 48px;text-align:center"></p>
+        <div class="tiers reveal d3" id="d-tiers"></div>
+        <div class="reveal d4">
+          <button onclick="switchTab('donate')" class="donate-btn" id="d-donate-btn"><span id="d-donate-btn-text">Make a Gift to The Bifrost School</span></button>
+        </div>
+        <p class="fiscal-note reveal" id="d-fiscal-note"></p>
+      </div>
+    </div>
+  </div>
+</div><!-- /tab-donate -->
+
+<!-- ═══════════════════════════════════════════════════ TAB: CONTACT -->
+<div class="tab-panel" id="tab-contact">
+  <div class="contact-section">
+    <div class="contact-art-bg" style="position:absolute;inset:0;background-image:url(images/contact-art-bg.jpg);background-size:cover;background-position:center 40%;filter:brightness(.45)"></div>
+    <div style="position:absolute;inset:0;background:rgba(10,14,24,.65)"></div>
+    <div class="container contact-content" style="position:relative;z-index:2">
+      <h2 class="section-title reveal" id="d-contact-title">Contact Us</h2>
+      <div class="rule reveal d2"></div>
+      <p class="section-body reveal d2" id="d-contact-body"></p>
+      <form class="contact-form reveal d3" id="interest-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="74ae198d-0f17-479c-a7a2-455f9e1e43b1">
+        <input type="hidden" name="subject" value="New message — The Bifrost School">
+        <input type="hidden" name="from_name" value="Bifrost School Website">
+        <input type="hidden" name="redirect" value="false">
+        <div class="form-row">
+          <div class="form-field"><label id="d-form-name-label">Your Name</label><input type="text" id="form-name" name="name" placeholder="Full name" required></div>
+          <div class="form-field"><label id="d-form-email-label">Email Address</label><input type="email" id="form-email" name="email" placeholder="you@email.com" required></div>
+        </div>
+        <div class="form-field"><label id="d-form-interest-label">I&rsquo;m interested as a&hellip;</label>
+          <select id="form-interest" name="interest"><option value="">Select one</option><option value="donor">Donor / Supporter</option><option value="family">Family seeking enrollment</option><option value="partner">Potential partner or sponsor</option><option value="educator">Educator or curriculum licensee</option><option value="other">Other</option></select>
+        </div>
+        <div class="form-field"><label id="d-form-message-label">Message</label><textarea id="form-message" name="message" required></textarea></div>
+        <button type="submit" class="submit-btn"><span id="d-form-submit-text">Send Message</span></button>
+        <div class="form-success" id="form-success" style="display:none"><span id="d-form-success-text">Thank you &mdash; we&rsquo;ll be in touch soon.</span></div>
+      </form>
+    </div>
+  </div>
+</div><!-- /tab-contact -->
+
+<footer><div class="footer-inner"><div id="d-footer-sub" style="margin-top:4px"></div><div style="margin-top:8px;opacity:.7">&copy; 2026 The Bifrost School. All rights reserved.</div><div style="margin-top:6px;opacity:.7;font-size:11px;letter-spacing:.08em">artwork by @vuogle</div></div>
+</footer>
+
+<script>
+function getConfig(){try{const r=localStorage.getItem('bifrost_config');if(r)return JSON.parse(r);}catch(e){}return null;}
+const D=JSON.parse("{\"schoolName\":\"The Bifrost School\",\"location\":\"\",\"heroLede\":\"Academic learning taught through fantasy role-playing games\",\"videoFile\":\"bifrost_bg.mp4\",\"missionAttr\":\"Jesse Livingston — Founder\",\"missionQuote\":\"School can be as epic as a fantasy quest\",\"teachEyebrow\":\"The Program\",\"teachTitle\":\"What We Teach — and How\",\"teachBody\":\"The Bifrost School is a small-group educational program where learning come to life through fantasy roleplaying adventures.  Sessions run two hours, once per week, in groups of four to five students — offered both in-person and online.\",\"subjects\":[{\"title\":\"English\",\"body\":\"Storytelling, reading, and writing taught as character creation and world-building.\"},{\"title\":\"Mathematics\",\"body\":\"Problem-solving through quests, puzzles, and in-world resource management.\"},{\"title\":\"Music\",\"body\":\"Rhythm, theory, and performance as bardic skill — the magic of sound.\"}],\"wmudEyebrow\":\"What Makes Us Different\",\"wmudTitle\":\"School as Adventure\",\"wmudCards\":[{\"title\":\"Role-playing is immersive\",\"body\":\"Small groups of 4–6 students huddle around a table, creating and roleplaying fantasy characters that go on epic quests.\"},{\"title\":\"Learning is driven by a quest\",\"body\":\"Traditional education presents learning as tasks with no context. At The Bifrost School, learning is driven by a quest.\"},{\"title\":\"Academics are seamlessly integrated\",\"body\":\"Understanding ecology might be integral to helping a group of Druids; knowledge of political systems might help students form the government of a new fantasy city. <br><br>It's so seamless, they won't realize it's \\\"school.\\\"\"},{\"title\":\"Learning content is the magic\",\"body\":\"<ul class=\\\"wmud-list\\\"><li><strong>Language:</strong> Writing “Apple” with the appropriate magical ink might conjure one.</li><li><strong>Math:</strong> A multiplication spell might turn that apple into many.</li><li><strong>Music:</strong> Rhythmic movement, as an animating force, might lift it into the air.</li></ul>\"}],\"fundingEyebrow\":\"Current Funding Need\",\"fundingTitle\":\"Development & Pilot Year\",\"fundingSub\":\"18 month development & pilot goal\",\"fundingGoal\":400000,\"amountRaised\":0,\"fundingBlurb\":\"This funding covers the full development and pilot phase — from narrative design and curriculum development through our first cohorts.\",\"milestonesLabel\":\"Development Milestones\",\"milestones\":[{\"num\":\"1\",\"strong\":\"Build the narrative world.\",\"body\":\"Contract writers and game designers to develop the RPG setting, characters, and story systems that anchor every subject.\"},{\"num\":\"2\",\"strong\":\"Develop the curriculum.\",\"body\":\"Collaborate with experienced educators to integrate English, Math, and Music in rigorous, standards-aligned ways.\"},{\"num\":\"3\",\"strong\":\"Run pilot cohorts.\",\"body\":\"Launch in-person and online groups to test, gather feedback, and refine before full launch.\"},{\"num\":\"4\",\"strong\":\"Hire and train founding staff.\",\"body\":\"Recruit, vet, and onboard the teachers and creative staff.\"},{\"num\":\"5\",\"strong\":\"Build for scale.\",\"body\":\"Finalize the platform, marketing, and licensing infrastructure for sustainable growth from Year 1 onward.\"}],\"budgetTitle\":\"18-Month Development Plan\",\"budgetSub\":\"Pilot Year Budget Breakdown\",\"budgetTotal\":400000,\"budgetFiscalRate\":3,\"budgetNote\":\"Contractor hours are front-loaded: narrative and game designers work full engagement during the 4-month build phase, then taper. Educators engage once pilots launch. Fiscal sponsor fee at 3% of total raise.\",\"budgetLines\":[{\"section\":\"People\",\"items\":[{\"label\":\"Full time salary\",\"basis\":\"$180k/yr × 1.5 years\",\"amount\":270000},{\"label\":\"Narrative design contractor\",\"basis\":\"$65/hr × 20hr/wk × 26 wks\",\"amount\":33800},{\"label\":\"Game design contractor\",\"basis\":\"$60/hr × 15hr/wk × 26 wks\",\"amount\":23400},{\"label\":\"Educator contractors (×2)\",\"basis\":\"$45/hr × 10hr/wk × 26 wks × 2\",\"amount\":23400}]},{\"section\":\"Formation & Legal\",\"items\":[{\"label\":\"LLC formation\",\"basis\":\"Tennessee filing + registered agent\",\"amount\":800},{\"label\":\"Legal (agreements + contracts)\",\"basis\":\"Attorney flat fee est.\",\"amount\":3500},{\"label\":\"Fiscal sponsor fee\",\"basis\":\"3% of $400,000 raised\",\"amount\":12000}]},{\"section\":\"Operations\",\"items\":[{\"label\":\"Business insurance (GL + E&O)\",\"basis\":\"$150/mo × 18\",\"amount\":2700},{\"label\":\"Curriculum materials & supplies\",\"basis\":\"Dice, maps, print, props\",\"amount\":3200},{\"label\":\"Online platform (Zoom, tools)\",\"basis\":\"$80/mo × 18\",\"amount\":1440},{\"label\":\"Marketing & outreach\",\"basis\":\"$300/mo × 18\",\"amount\":5400}]},{\"section\":\"Contingency\",\"items\":[{\"label\":\"Contingency reserve (10%)\",\"basis\":\"Buffer on total budget\",\"amount\":34260}]}],\"streamsEyebrow\":\"Revenue Streams\",\"streamsTitle\":\"Four Ways the School Sustains Itself\",\"streamsBody\":\"We have a range of ways to help sustain the school, with tuition as the anchor.\",\"streams\":[{\"cls\":\"s1\",\"label\":\"In-Person Program\",\"body\":\"Small groups of 4–5 students meeting weekly at the school's home base (founder's home).\"},{\"cls\":\"s2\",\"label\":\"Online Program\",\"body\":\"The same RPG-driven curriculum delivered virtually, reaching students nationwide.\"},{\"cls\":\"s3\",\"label\":\"Audio Adventures\",\"body\":\"Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions.\"},{\"cls\":\"s4\",\"label\":\"Curriculum Licensing\",\"body\":\"Other tutors, micro-schools, and homeschool co-ops license the Bifrost curriculum. Recurring annual fees or one time purchases.\"}],\"roadmapEyebrow\":\"The Roadmap\",\"roadmapTitle\":\"Five Years to Full Capacity\",\"roadmapIntro\":\"Once the development year is complete, here is how The Bifrost School grows from its first cohorts to a self-sustaining operation.\",\"chartEyebrow\":\"Revenue Projection\",\"chartTitle\":\"Donations Needed Each Year\",\"chartBody\":\"As program revenue grows year over year, the donation need declines. By Year 5, the school approaches self-sufficiency.\",\"ctaEyebrow\":\"Join the Quest\",\"ctaTitle\":\"Support The Bifrost School\",\"ctaBody\":\"Your support bridges the gap between development and a self-sustaining school.\",\"donateBtnText\":\"Make a Gift to The Bifrost School\",\"donateUrl\":\"#\",\"fiscalNote\":\"Donations processed through our fiscal sponsor · Tax-deductible under IRC §501(c)(3)\",\"contactEyebrow\":\"\",\"contactTitle\":\"Contact Us\",\"contactBody\":\"Whether you're a prospective donor, a family interested in enrollment, or an educator interested in licensing — we'd love to hear from you.\",\"email\":\"\",\"formRecipient\":\"jesse@bifrostschool.com\",\"formNameLabel\":\"Your Name\",\"formEmailLabel\":\"Email Address\",\"formInterestLabel\":\"I'm interested as a…\",\"formMessageLabel\":\"Message\",\"formSubmitText\":\"Send Message\",\"formSuccessText\":\"Thank you — we'll be in touch soon.\",\"priceIP\":200,\"priceON\":300,\"cohortSize\":4,\"weeks\":48,\"audioPrice\":12,\"licenseFee\":500,\"rateIP\":28,\"rateON\":25,\"payroll\":18,\"platform\":80,\"marketing\":200,\"donorPassword\":\"bifrost\",\"yearRamps\":[{\"ipC\":2,\"onC\":3,\"audioT\":1,\"audioU\":20,\"lic\":0,\"label\":\"Launch\",\"note\":\"Opening with 3+3 cohorts at roughly 40% capacity. Donations remain essential as the program builds its audience.\"},{\"ipC\":4,\"onC\":4,\"audioT\":3,\"audioU\":35,\"lic\":2,\"label\":\"Traction\",\"note\":\"Growing to 4+4 cohorts. First licensees onboard. Donation need declining.\"},{\"ipC\":4,\"onC\":7,\"audioT\":5,\"audioU\":60,\"lic\":6,\"label\":\"Growth\",\"note\":\"Near full in-person capacity. Online cohorts growing. Licensing and audio becoming meaningful.\"},{\"ipC\":4,\"onC\":9,\"audioT\":8,\"audioU\":90,\"lic\":12,\"label\":\"Scale\",\"note\":\"Approaching full capacity. Product revenue growing. Donation need closing significantly.\"},{\"ipC\":4,\"onC\":11,\"audioT\":10,\"audioU\":120,\"lic\":18,\"label\":\"Capacity\",\"note\":\"Full scale. Four revenue streams working together. The school approaches self-sufficiency.\"}],\"tiers\":[{\"amount\":100,\"name\":\"Apprentice\",\"desc\":\"Covers materials and supplies for one student for a full year of questing.\",\"featured\":false},{\"amount\":500,\"name\":\"Adventurer\",\"desc\":\"Sponsors two months of tuition for one student, enough to complete a full story arc.\",\"featured\":false},{\"amount\":2500,\"name\":\"Champion\",\"desc\":\"Funds one teacher for an entire month across all their cohorts.\",\"featured\":true},{\"amount\":10000,\"name\":\"Legendary\",\"desc\":\"Covers roughly one month of full operating costs for the school.\",\"featured\":false},{\"amount\":50000,\"name\":\"Realm Builder\",\"desc\":\"Funds approximately one full quarter of the school's development year.\",\"featured\":false}],\"eyebrow\":\"Donor Prospectus · A Five-Year Vision\"}");;;;;;;;
+const CFG={...D,...(getConfig()||{})};
+const FIXED={insurance:1200,supplies:1800,admin:1200,misc:1800};
+const FOUNDER=170000;
+
+const ART_YEARS=['images/year-art-1.jpg','images/year-art-2.jpg','images/year-art-3.jpg','images/cta-art.jpg','images/year-art-4.jpg'];
+const ART_YEAR_POS=['center 70%','center 62%','center 65%','center 35%','center 35%'];
+
+function computeYear(r){
+  const ipC=r.ipC,onC=r.onC,sz=CFG.cohortSize,wk=CFG.weeks/48;
+  const ipSt=ipC*sz,onSt=onC*sz,tot=ipSt+onSt;
+  const tuit=ipSt*CFG.priceIP*12*wk+onSt*CFG.priceON*12*wk+tot*50+tot*30;
+  const audio=r.audioT*CFG.audioPrice*r.audioU;
+  const lic=r.lic*CFG.licenseFee;
+  const productRev=tuit+audio+lic;
+  const pay=CFG.payroll/100,hpw=3;
+  const opCosts=ipC*hpw*CFG.weeks*CFG.rateIP*(1+pay)+onC*hpw*CFG.weeks*CFG.rateON*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
+  const totalCosts=opCosts+FOUNDER;
+  const net=productRev-totalCosts;
+  const donNeeded=Math.max(-net,0);
+  return{tuit,audio,lic,productRev,opCosts,totalCosts,net,donNeeded,
+    totalSt:tot,ipC,onC,audioTitles:r.audioT,audioUnits:r.audioU,licensees:r.lic,label:r.label,note:r.note};
+}
+
+function fmt(n,d=0){return Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})}
+function fmtC(n){return n<0?'($'+fmt(-n)+')':'$'+fmt(n)}
+function fmtK(n){return n>=1000?'$'+fmt(n/1000,0)+'k':fmtC(n)}
+function st(id,v){const e=document.getElementById(id);if(e)e.textContent=v;}
+function ht(id,v){const e=document.getElementById(id);if(e)e.innerHTML=v;}
+
+function injectContent(){
+  document.title=(CFG.schoolName||'The Bifrost School')+' — A Five-Year Vision';
+  // nav-school-name is now an SVG logo — no text injection
+  st('d-school-name',CFG.schoolName||'The Bifrost School');
+  st('d-hero-lede',CFG.heroLede||'');  st('d-mission-quote',CFG.missionQuote||'');
+  st('d-mission-attr',CFG.missionAttr||'Jesse Livingston \u2014 Founder');
+  st('d-teach-eyebrow',CFG.teachEyebrow||'');
+  st('d-teach-title',CFG.teachTitle||'');
+  ht('d-teach-body',(CFG.teachBody||'').split('\n\n').map(p=>'<p>'+p+'</p>').join(''));
+  ht('d-subject-cards',(CFG.subjects||[]).map(s=>'<div class="what-card"><div class="wc-title">'+s.title+'</div><div class="wc-body">'+s.body+'</div></div>').join(''));
+  st('d-streams-eyebrow',CFG.streamsEyebrow||'Revenue Streams');
+  st('d-streams-title',CFG.streamsTitle||'');
+  ht('d-streams-body',CFG.streamsBody||'');
+  ht('d-streams-grid',(CFG.streams||[]).map(s=>'<div class="stream-card '+s.cls+'"><div class="sc-label">'+s.label+'</div><div class="sc-body">'+s.body+'</div></div>').join(''));
+  // WMUD cards
+  ht('d-wmud-grid',(CFG.wmudCards||[]).map((c,i)=>{
+    const isLast = i === (CFG.wmudCards.length-1) && (CFG.wmudCards.length % 2 !== 0);
+    return '<div class="wmud-card'+(isLast?' wmud-card--wide':'')+'">' +
+      '<div class="wmud-title">'+c.title+'</div>' +
+      '<div class="wmud-body">'+c.body+'</div></div>';
+  }).join(''));
+  st('d-funding-eyebrow',CFG.fundingEyebrow||'');
+  st('d-funding-title',CFG.fundingTitle||'');
+  st('d-funding-amount',fmtC(CFG.fundingGoal||300000));
+  st('d-funding-sub',CFG.fundingSub||'');
+  st('d-funding-blurb',CFG.fundingBlurb||'');
+  st('d-milestones-label',CFG.milestonesLabel||'');
+  ht('d-milestones-list',(CFG.milestones||[]).map(m=>'<li><span class="milestone-num">'+m.num+'</span><div class="milestone-text"><strong>'+m.strong+'</strong> '+m.body+'</div></li>').join(''));
+  renderFundingBar();
+  st('d-roadmap-eyebrow',CFG.roadmapEyebrow||'');
+  st('d-roadmap-title',CFG.roadmapTitle||'');
+  ht('d-roadmap-intro',CFG.roadmapIntro||'');
+  st('d-chart-eyebrow',CFG.chartEyebrow||'');
+  st('d-chart-title',CFG.chartTitle||'');
+  ht('d-chart-body',CFG.chartBody||'');
+  renderTotalRaisedBar();
+  st('d-cta-eyebrow',CFG.ctaEyebrow||'');
+  st('d-cta-title',CFG.ctaTitle||'');
+  ht('d-cta-body',CFG.ctaBody||'');
+  st('d-donate-btn-text',CFG.donateBtnText||'');
+  st('d-fiscal-note',CFG.fiscalNote||'');
+  st('d-contact-eyebrow',CFG.contactEyebrow||'');
+  st('d-contact-title',CFG.contactTitle||'');
+  ht('d-contact-body',CFG.contactBody||'');
+  st('d-form-name-label',CFG.formNameLabel||'');
+  st('d-form-email-label',CFG.formEmailLabel||'');
+  st('d-form-interest-label',CFG.formInterestLabel||'');
+  st('d-form-message-label',CFG.formMessageLabel||'');
+  st('d-form-submit-text',CFG.formSubmitText||'');
+  st('d-form-success-text',CFG.formSuccessText||'');
+  // email not shown in footer
+  const cab=document.getElementById('d-contact-art-bg');if(cab)cab.style.backgroundImage='url(images/contact-art-bg.jpg)';
+  const db=document.getElementById('d-donate-btn');
+  if(db&&CFG.donateUrl&&CFG.donateUrl!=='#'){db.onclick=()=>window.open(CFG.donateUrl,'_blank');}
+  const fb=document.getElementById('float-donate-btn');
+  if(fb&&CFG.donateUrl&&CFG.donateUrl!=='#'){fb.onclick=()=>window.open(CFG.donateUrl,'_blank');}
+  ht('d-tiers',(CFG.tiers||[]).map((t,i)=>'<div class="tier'+(t.featured?' featured':'')+((CFG.tiers.length===5&&i>=3)?' tier-offset':'')+'"><span class="tier-amount">$'+fmt(t.amount)+'</span><span class="tier-name">'+t.name+'</span><div class="tier-desc">'+t.desc+'</div></div>').join(''));
+  const nav=document.getElementById('year-nav');
+  if(nav)nav.innerHTML=(CFG.yearRamps||[]).map((r,i)=>'<button class="yr-btn'+(i===0?' active':'')+'" data-yr="'+i+'">Year '+(i+1)+'<small>'+r.label+'</small></button>').join('');
+  document.querySelectorAll('.yr-btn').forEach(b=>b.addEventListener('click',()=>switchYear(parseInt(b.dataset.yr))));
+  renderChart();
+}
+
+function renderFundingBar(){
+  const goal=CFG.fundingGoal||300000,raised=CFG.amountRaised||0;
+  const pct=goal>0?Math.min(raised/goal*100,100):0;
+  const bar=document.getElementById('d-funding-bar');if(bar)bar.style.width=pct+'%';
+  st('d-funding-pct',Math.round(pct)+'% funded');
+}
+
+function renderTotalRaisedBar(){
+  const raised=CFG.amountRaised||0;
+  const devGoal=CFG.fundingGoal||300000;
+  const years=(CFG.yearRamps||[]).map(r=>computeYear(r));
+  const opTotal=years.reduce((sum,r)=>sum+r.donNeeded,0);
+  const totalNeeded=devGoal+opTotal;
+  const pct=totalNeeded>0?Math.min(raised/totalNeeded*100,100):0;
+  st('trb-raised',fmtC(raised)+' raised');
+  st('trb-goal','of '+fmtC(totalNeeded)+' total goal');
+  st('trb-pct',Math.round(pct)+'% funded');
+  const fill=document.getElementById('trb-fill');if(fill)fill.style.width=pct+'%';
+}
+
+let curYear=0;
+function switchYear(i){
+  curYear=i;
+  document.querySelectorAll('.yr-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  renderYear(i);
+}
+
+function renderYear(i){
+  const ramp=(CFG.yearRamps||[])[i];if(!ramp)return;
+  const R=computeYear(ramp);
+  const el=document.getElementById('year-content');if(!el)return;
+  const artSrc=ART_YEARS[i]||ART_YEARS[0];
+  const pos=ART_YEAR_POS[i]||'center 55%';
+  el.innerHTML=
+    '<div class="yr-art-band"><img src="'+artSrc+'" alt="" style="width:100%;height:100%;object-fit:cover;object-position:'+pos+';filter:brightness(.65)">'+
+    '<div class="yr-art-band-overlay"><div>'+
+    '<div class="yr-art-band-label">Year '+(i+1)+' — '+R.label+'</div>'+
+    '<div class="yr-art-band-note">'+R.note+'</div>'+
+    '</div></div></div>'+
+    '<div class="yr-metrics" style="margin-top:2px">'+
+    '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.tuit)+'</span><div class="ml">Tuition</div>'+
+    '<div class="yr-metric-detail" style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500">'+R.ipC+' in-person + '+R.onC+' online cohorts &mdash; '+R.totalSt+' students</div></div>'+
+    '<div class="yr-metric"><span class="mv blue">'+fmtC(R.audio)+'</span><div class="ml">Audio</div>'+
+    '<div class="yr-metric-detail" style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500">'+R.audioTitles+' title'+(R.audioTitles===1?'':'s')+' &mdash; '+fmt(R.audioUnits,0)+' units sold per title</div></div>'+
+    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Licensing</div>'+
+    '<div class="yr-metric-detail" style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.4;font-weight:500">'+(R.licensees===0?'Launches Year 2':R.licensees+' licensee'+(R.licensees===1?'':'s')+' &mdash; '+fmtC(CFG.licenseFee)+'/yr each')+'</div></div>'+
+    '</div>'+
+    '<div class="funding-goal-box">'+
+    '<div class="fg-title">Year '+(i+1)+' Donation Goal</div>'+
+    '<div class="fg-row">'+
+    '<div class="fg-item"><span class="fgv" style="color:var(--gold2)">'+fmtC(R.productRev)+'</span><div class="fgl">Total Program Revenue</div></div>'+
+    '<div class="fg-item"><span class="fgv" style="color:rgba(255,255,255,.55)">'+fmtC(R.totalCosts)+'</span><div class="fgl">Total Costs (incl. all staff)</div></div>'+
+    '</div>'+
+    (R.donNeeded>0
+      ?'<div class="fg-donation-goal"><div class="fg-donation-label">Donations needed to close the gap</div><div class="fg-donation-amount">'+fmtC(R.donNeeded)+'</div></div>'
+      :'<div class="fg-break-even">Program revenue covers all costs</div>'
+    )+
+    '</div>'+
+    '';
+}
+
+function renderChart(){
+  const el=document.getElementById('all-years-chart');if(!el)return;
+  const years=(CFG.yearRamps||[]).map(r=>computeYear(r));
+  const maxVal=Math.max(...years.map(r=>Math.max(r.productRev,r.donNeeded)),1);
+  el.innerHTML=years.map((R,i)=>{
+    const revH=maxVal>0?R.productRev/maxVal*100:0;
+    const donH=maxVal>0?R.donNeeded/maxVal*100:0;
+    return'<div class="chart-col" data-yr="'+i+'">'+
+      '<div class="chart-col-bars">'+
+      '<div class="chart-seg" style="height:'+revH+'%;background:rgba(212,168,75,.35);border-radius:3px 3px 0 0"></div>'+
+      '<div class="chart-seg" style="height:'+donH+'%;background:#5cd68c;opacity:.85"></div>'+
+      '</div>'+
+      '<div class="chart-col-label">Yr '+(i+1)+'</div>'+
+      '<div class="chart-col-don">'+fmtK(R.donNeeded)+'</div>'+
+      '</div>';
+  }).join('');
+  document.querySelectorAll('.chart-col').forEach(c=>c.addEventListener('click',()=>switchYear(parseInt(c.dataset.yr))));
+  const lg=document.getElementById('chart-legend');
+  if(lg)lg.innerHTML='<div class="chart-legend-item"><div class="chart-legend-dot" style="background:rgba(212,168,75,.5)"></div>Program Revenue</div><div class="chart-legend-item"><div class="chart-legend-dot" style="background:#5cd68c"></div>Donations Needed</div>';
+}
+
+
+function getDonorPassword(){ return CFG.donorPassword || 'bifrost'; }
+
+
+
+
+// ── SITE GATE ─────────────────────────────────────────────────────────────────
+const SITE_AUTH_KEY = 'bifrost_site_auth';
+function checkSitePassword(){
+  const val = document.getElementById('site-pw-input').value;
+  if(val === (CFG.donorPassword || 'bifrost')){
+    sessionStorage.setItem(SITE_AUTH_KEY, '1');
+    const g = document.getElementById('site-gate');
+    if(g) g.remove();
+  } else {
+    const err = document.getElementById('site-pw-err');
+    err.style.display = 'block';
+    setTimeout(() => err.style.display = 'none', 2500);
+  }
+}
+
+// ── DEVELOPMENT TAB PASSWORD ──────────────────────────────────────────────────
+const DEV_AUTH_KEY = 'bifrost_dev_auth';
+function checkDevPassword(){
+  const val = document.getElementById('dev-pw-input').value;
+  if(val === getDonorPassword()){
+    sessionStorage.setItem(DEV_AUTH_KEY,'1');
+    const devG=document.getElementById('dev-pw-gate');
+    if(devG)devG.remove();
+    const devC=document.getElementById('dev-content');
+    if(devC)devC.style.display='block';
+    setTimeout(()=>{
+      document.querySelectorAll('#dev-content .reveal').forEach(el=>observer.observe(el));
+      renderChart();
+      switchYear(curYear||0);
+    },80);
+  } else {
+    const err = document.getElementById('dev-pw-err');
+    err.style.display='block';
+    setTimeout(()=>err.style.display='none', 2500);
+  }
+}
+
+// ── TAB SWITCHING ─────────────────────────────────────────────────────────────
+function switchTab(name){
+  // Check dev password gate
+  if(name==='development' && sessionStorage.getItem(DEV_AUTH_KEY)!=='1'){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  document.querySelectorAll('.mobile-nav .tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));
+    window.scrollTo({top:0,behavior:'instant'});
+    // Show gate, hide content
+    const gate=document.getElementById('dev-pw-gate');
+    const content=document.getElementById('dev-content');
+    if(gate){gate.style.display='flex';}
+    if(content){content.style.display='none';}
+    return;
+  }
+  if(name==='development'){
+    const gate=document.getElementById('dev-pw-gate');
+    const content=document.getElementById('dev-content');
+    if(gate)gate.style.display='none';
+    if(content)content.style.display='block';
+    setTimeout(()=>switchYear(curYear||0),50);
+  }
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  document.querySelectorAll('.mobile-nav .tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));
+  window.scrollTo({top:0,behavior:'instant'});
+  // Trigger reveals for newly visible panel
+  setTimeout(()=>{
+    document.querySelectorAll('#tab-'+name+' .reveal').forEach(el=>{
+      if(!el.classList.contains('visible')) observer.observe(el);
+    });
+  }, 50);
+  // Re-render chart when development tab becomes active
+  if(name==='development') renderChart();
+}
+
+let observer;
+
+// ── BUDGET MODAL ──────────────────────────────────────────────────────────────
+function fmt$(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+
+function openBudgetModal(){
+  const c=CFG;
+  document.getElementById('bm-title').textContent=c.budgetTitle||'18-Month Development Plan';
+  document.getElementById('bm-sub').textContent=c.budgetSub||'Pilot Year Budget Breakdown';
+  const total=c.budgetTotal||400000;
+  const rate=c.budgetFiscalRate||3;
+  document.getElementById('bm-total').textContent=fmt$(total);
+  // bm-fee removed
+  document.getElementById('bm-note').textContent=c.budgetNote||'';
+  const lines=c.budgetLines||[];
+  let rows='<thead><tr><th>Line item</th><th>Basis</th><th>Amount</th></tr></thead><tbody>';
+  lines.forEach(section=>{
+    rows+='<tr><td colspan="3" class="bm-section">'+section.section+'</td></tr>';
+    let subtotal=0;
+    (section.items||[]).forEach(item=>{
+      subtotal+=item.amount;
+      rows+='<tr><td>'+item.label+'</td><td>'+item.basis+'</td><td>'+fmt$(item.amount)+'</td></tr>';
+    });
+    rows+='<tr class="bm-subtotal"><td colspan="2">'+section.section+' subtotal</td><td>'+fmt$(subtotal)+'</td></tr>';
+  });
+  rows+='<tr class="bm-total"><td colspan="2">Total funding ask</td><td>'+fmt$(total)+'</td></tr>';
+  rows+='</tbody>';
+  document.getElementById('bm-table').innerHTML=rows;
+  document.getElementById('budget-modal').classList.add('open');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  // Site gate
+  const sg=document.getElementById('site-gate');
+  if(sg){
+    if(sessionStorage.getItem(SITE_AUTH_KEY)==='1'){
+      sg.remove();
+    } else {
+      document.getElementById('site-pw-btn').addEventListener('click',checkSitePassword);
+      document.getElementById('site-pw-input').addEventListener('keydown',e=>{if(e.key==='Enter')checkSitePassword();});
+    }
+  }
+
+
+  // Budget modal listeners
+  const bm=document.getElementById('budget-modal');
+  if(bm){
+    bm.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){const m=document.getElementById('budget-modal');if(m)m.classList.remove('open');}});
+
+  // Hamburger menu
+  const hamburger=document.getElementById('hamburger-btn');
+  const mobileNav=document.getElementById('mobile-nav');
+  if(hamburger&&mobileNav){
+    hamburger.addEventListener('click',()=>{
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+    mobileNav.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        switchTab(btn.dataset.tab);
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  }
+  injectContent();
+  switchYear(0);
+
+  observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:.06});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  // Immediately reveal hero
+  document.querySelectorAll('.hero .reveal').forEach(el=>el.classList.add('visible'));
+
+  document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+  const devPwBtn=document.getElementById('dev-pw-btn');
+  if(devPwBtn)devPwBtn.addEventListener('click',checkDevPassword);
+  const devPwIn=document.getElementById('dev-pw-input');
+  if(devPwIn)devPwIn.addEventListener('keydown',e=>{if(e.key==='Enter')checkDevPassword();});
+
+  document.getElementById('interest-form')?.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const btn=this.querySelector('.submit-btn');
+    const successDiv=document.getElementById('form-success');
+    btn.disabled=true;
+    btn.querySelector('span').textContent='Sending…';
+    const data=new FormData(this);
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
+      const json=await res.json();
+      if(json.success){
+        this.reset();
+        successDiv.style.display='block';
+        btn.querySelector('span').textContent=CFG.formSubmitText||'Send Message';
+        btn.disabled=false;
+        setTimeout(()=>successDiv.style.display='none',6000);
+      } else {
+        btn.querySelector('span').textContent='Error — please try again';
+        btn.disabled=false;
+      }
+    }catch(err){
+      btn.querySelector('span').textContent='Error — please try again';
+      btn.disabled=false;
+    }
+  });
+});
+</script>
+
+<!-- BUDGET MODAL -->
+<div id="budget-modal">
+  <div class="budget-modal-box">
+    <button class="bm-close" onclick="document.getElementById('budget-modal').classList.remove('open')">&times;</button>
+    <div class="bm-title" id="bm-title">18-Month Development Plan</div>
+    <div class="bm-sub" id="bm-sub">Pilot Year Budget Breakdown</div>
+    <div class="bm-metrics" style="grid-template-columns:1fr">
+      <div class="bm-metric"><div class="ml">Total funding ask</div><div class="mv" id="bm-total">$400,000</div></div>
+    </div>
+    <table class="bm-table" id="bm-table"></table>
+    <div class="bm-note" id="bm-note">Contractor hours are front-loaded: narrative and game designers work full engagement during the 4-month build phase, then taper. Educators engage once pilots launch. Fiscal sponsor fee at 3% of total raise.</div>
+  </div>
+</div>
+</body>
+</html>
