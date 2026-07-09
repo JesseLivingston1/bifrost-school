@@ -23,7 +23,7 @@ function computeYear(r){
   const ipSt=ipC*sz,onSt=onC*sz,tot=ipSt+onSt;
   const tuit=ipSt*CFG.priceIP*12*wk+onSt*CFG.priceON*12*wk+tot*50+tot*30;
   const audio=r.audioT*CFG.audioPrice*r.audioU;
-  const lic=r.lic*CFG.licenseFee;
+  const lic=r.lic*CFG.curriculumPrice;
   const productRev=tuit+audio+lic;
   const pay=CFG.payroll/100,hpw=3;
   const opCosts=ipC*hpw*CFG.weeks*CFG.rateIP*(1+pay)+onC*hpw*CFG.weeks*CFG.rateON*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
@@ -31,7 +31,7 @@ function computeYear(r){
   const net=productRev-totalCosts;
   const donNeeded=Math.max(-net,0);
   return{tuit,audio,lic,productRev,opCosts,totalCosts,net,donNeeded,
-    totalSt:tot,ipC,onC,audioTitles:r.audioT,audioUnits:r.audioU,licensees:r.lic,label:r.label,note:r.note};
+    totalSt:tot,ipC,onC,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -60,10 +60,6 @@ function injectContent(){
   if(CFG.founderVideoFile){if(fvSrc)fvSrc.src=CFG.founderVideoFile;if(fvVideo){fvVideo.load();fvVideo.style.display='block';}if(fvHolder)fvHolder.style.display='none';}
   st('d-founder-video-eyebrow',CFG.founderVideoEyebrow||'From the Founder');
   st('d-founder-video-caption',CFG.founderVideoCaption||'');
-  st('d-teach-eyebrow',CFG.teachEyebrow||'');
-  st('d-teach-title',CFG.teachTitle||'');
-  ht('d-teach-body',paras(CFG.teachBody));
-  ht('d-subject-cards',(CFG.subjects||[]).map(s=>'<div class="what-card"><div class="wc-title">'+s.title+'</div><div class="wc-body">'+s.body+'</div></div>').join(''));
   ht('d-wmud-grid',(CFG.wmudCards||[]).map((c,i)=>{
     const isLast=i===(CFG.wmudCards.length-1)&&(CFG.wmudCards.length%2!==0);
     return '<div class="wmud-card'+(isLast?' wmud-card--wide':'')+'"><div class="wmud-title">'+c.title+'</div><div class="wmud-body">'+c.body+'</div></div>';
@@ -159,7 +155,7 @@ function renderYear(i){
     '<div class="yr-metrics" style="margin-top:2px">'+
     '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.tuit)+'</span><div class="ml">Tuition</div></div>'+
     '<div class="yr-metric"><span class="mv blue">'+fmtC(R.audio)+'</span><div class="ml">Audio</div></div>'+
-    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Licensing</div></div>'+
+    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Curriculum Sales</div></div>'+
     '</div>'+
     '<div class="funding-goal-box">'+
     '<div class="fg-title">Year '+(i+1)+' Donation Goal</div>'+
@@ -175,7 +171,7 @@ function renderYear(i){
     '<div class="milestone-grid">'+
     '<div class="milestone"><div class="mt"><strong>'+R.ipC+' in-person + '+R.onC+' online cohorts</strong>, serving '+R.totalSt+' students.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.audioTitles+' audio titles</strong>, '+fmt(R.audioUnits,0)+' units sold per title.</div></div>'+
-    '<div class="milestone"><div class="mt"><strong>'+R.licensees+' curriculum licensees</strong>'+(R.licensees===0?' (licensing launches in Year 2).':', '+fmtC(R.lic)+' in recurring fees.')+'</div></div>'+
+    '<div class="milestone"><div class="mt"><strong>'+R.curriculumSales+' curriculum packages sold</strong>'+(R.curriculumSales===0?' (sales launch in Year 2).':', '+fmtC(R.lic)+' in one-time sales.')+'</div></div>'+
     '</div>';
 }
 

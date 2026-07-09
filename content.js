@@ -34,19 +34,6 @@ window.BIFROST_CONTENT = {
   founderVideoEyebrow: "From the Founder",
   founderVideoCaption: "",
 
-  /* ---------- The Program ---------- */
-  teachEyebrow: "The Program",
-  teachTitle: "What We Teach and How",
-  teachBody: [
-    "The Bifrost School is a small-group educational program where learning comes to life through fantasy roleplaying adventures.",
-    "Sessions run two hours, once per week, in groups of four to five students, offered both in-person and online."
-  ],
-  subjects: [
-    { title: "English", body: "Storytelling, reading, and writing taught as character creation and world-building." },
-    { title: "Mathematics", body: "Problem-solving through quests, puzzles, and in-world resource management." },
-    { title: "Music", body: "Rhythm, theory, and performance as bardic skill: the magic of sound." }
-  ],
-
   /* ---------- Our Philosophy ---------- */
   principlesEyebrow: "Our Philosophy",
   principlesSubtitle: "The Bifrost School is built on four principles, each one a doorway between the world of the story and the world you actually live in.",
@@ -102,7 +89,7 @@ window.BIFROST_CONTENT = {
     { num: "2", strong: "Develop the curriculum.", body: "Collaborate with experienced educators to integrate English, Math, and Music in rigorous, standards-aligned ways." },
     { num: "3", strong: "Run pilot cohorts.", body: "Launch in-person and online groups to test, gather feedback, and refine before full launch." },
     { num: "4", strong: "Hire and train founding staff.", body: "Recruit, vet, and onboard the teachers and creative staff who will bring the Bifrost world to life and develop the training program that will define how we teach." },
-    { num: "5", strong: "Build for scale.", body: "Finalize the platform, marketing, and licensing infrastructure for sustainable growth from Year 1 onward." }
+    { num: "5", strong: "Build for scale.", body: "Finalize the platform, marketing, and curriculum sales infrastructure for sustainable growth from Year 1 onward." }
   ],
 
   /* ---------- Budget modal ("See full plan") ---------- */
@@ -125,7 +112,7 @@ window.BIFROST_CONTENT = {
     { cls: "s1", label: "In-Person Program", body: "Small groups of 4–5 students meeting weekly at the school's home base (founder's home)." },
     { cls: "s2", label: "Online Program", body: "The same RPG-driven curriculum delivered virtually, reaching students nationwide." },
     { cls: "s3", label: "Audio Adventures", body: "Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions." },
-    { cls: "s4", label: "Curriculum Licensing", body: "Other tutors, micro-schools, and homeschool co-ops license the Bifrost curriculum. Recurring annual fees or one time purchases." }
+    { cls: "s4", label: "Curriculum Sales", body: "Other tutors, micro-schools, and homeschool co-ops purchase the Bifrost curriculum as one-time packages." }
   ],
 
   /* ---------- Five-year roadmap ---------- */
@@ -134,11 +121,11 @@ window.BIFROST_CONTENT = {
   roadmapIntro: "Once the development year is complete, here is how The Bifrost School grows from its first cohorts to a self-sustaining operation.",
   /* One entry per year. ipC = in-person cohorts, onC = online cohorts,
      audioT = audio titles for sale, audioU = units sold per title,
-     lic = curriculum licensees. */
+     lic = curriculum packages sold that year (one-time sales). */
   yearRamps: [
     { ipC: 2, onC: 3, audioT: 1, audioU: 20, lic: 0, label: "Launch", note: "Opening with 3+3 cohorts at roughly 40% capacity. Donations remain essential as the program builds its audience." },
-    { ipC: 4, onC: 4, audioT: 3, audioU: 35, lic: 2, label: "Traction", note: "Growing to 4+4 cohorts. First licensees onboard. Donation need declining." },
-    { ipC: 4, onC: 7, audioT: 5, audioU: 60, lic: 6, label: "Growth", note: "Near full in-person capacity. Online cohorts growing. Licensing and audio becoming meaningful." },
+    { ipC: 4, onC: 4, audioT: 3, audioU: 35, lic: 2, label: "Traction", note: "Growing to 4+4 cohorts. First curriculum sales. Donation need declining." },
+    { ipC: 4, onC: 7, audioT: 5, audioU: 60, lic: 6, label: "Growth", note: "Near full in-person capacity. Online cohorts growing. Curriculum and audio sales becoming meaningful." },
     { ipC: 4, onC: 9, audioT: 8, audioU: 90, lic: 12, label: "Scale", note: "Approaching full capacity. Product revenue growing. Donation need closing significantly." },
     { ipC: 4, onC: 11, audioT: 10, audioU: 120, lic: 18, label: "Capacity", note: "Full scale. Four revenue streams working together. The school approaches self-sufficiency." }
   ],
@@ -154,8 +141,8 @@ window.BIFROST_CONTENT = {
   payroll: 18,       // payroll tax + overhead, percent
   platform: 80,      // software/platform cost per month
   marketing: 200,    // marketing budget per month
-  audioPrice: 12,    // price per audio adventure unit
-  licenseFee: 500,   // annual fee per curriculum licensee
+  audioPrice: 12,        // price per audio adventure unit
+  curriculumPrice: 500,  // one-time price per curriculum package
 
   /* ---------- Revenue chart ---------- */
   chartEyebrow: "Revenue Projection",
@@ -194,7 +181,7 @@ window.BIFROST_CONTENT = {
 
   /* ---------- Contact tab ---------- */
   contactTitle: "Contact Us",
-  contactBody: "Whether you’re a prospective donor, a family interested in enrollment, or an educator interested in licensing, we’d love to hear from you.",
+  contactBody: "Whether you’re a prospective donor, a family interested in enrollment, or an educator interested in the curriculum, we’d love to hear from you.",
   formNameLabel: "Your Name",
   formEmailLabel: "Email Address",
   formInterestLabel: "I’m interested as a…",

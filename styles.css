@@ -87,12 +87,6 @@ h1,h2{font-family:'Berkshire Swash',serif;font-weight:normal}
 /* ── FOUNDER VIDEO ──────────────────────────────────────────────────── */
 .founder-video-section{background:#060d16;padding:40px 0}
 
-/* ── WHAT WE TEACH GRID ─────────────────────────────────────────────── */
-.what-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;margin-top:36px;margin-bottom:60px}
-.what-card{background:var(--bg4);padding:28px 24px;border:1px solid var(--border2)}
-.what-card .wc-title{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700}
-.what-card .wc-body{font-size:15px;color:#fff;line-height:1.65;font-weight:400}
-
 /* ── PRINCIPLES (OUR PHILOSOPHY) ────────────────────────────────────── */
 .principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .principle-card{background:var(--bg4);border:1px solid var(--border2);padding:32px 28px}
@@ -331,7 +325,6 @@ footer a:hover{color:var(--gold2)}
   .wmud-body{font-size:18px}
   .wmud-list li{font-size:16px}
   .sc-body{font-size:17px}
-  .what-card .wc-body{font-size:17px}
   .milestone .mt{font-size:17px}
   .tier-desc{font-size:16px}
 
