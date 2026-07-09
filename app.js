@@ -19,21 +19,19 @@ const ART_YEAR_POS=['center 70%','center 62%','center 65%','center 35%','center 
 
 // ── FIVE-YEAR FINANCIAL MODEL ─────────────────────────────────────────────────
 function computeYear(r){
-  const ipC=r.ipC,onC=r.onC,sch=r.sch||0,sz=CFG.cohortSize,wk=CFG.weeks/48;
-  const ipSt=ipC*sz,onSt=onC*sz,tot=ipSt+onSt;
-  const tuit=ipSt*CFG.priceIP*12*wk+onSt*CFG.priceON*12*wk+tot*50+tot*30;
+  const sch=r.sch||0;
   const audio=r.audioT*CFG.audioPrice*r.audioU;
   const lic=r.lic*CFG.curriculumPrice;
   const schRev=sch*(CFG.partnershipFee||0);
-  const productRev=tuit+audio+lic+schRev;
+  const productRev=audio+lic+schRev;
   const pay=CFG.payroll/100,hpw=3;
-  // Each partner school is assumed to cost roughly one cohort's worth of staff time per year
-  const opCosts=(ipC+sch)*hpw*CFG.weeks*CFG.rateIP*(1+pay)+onC*hpw*CFG.weeks*CFG.rateON*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
+  // Each partner school is assumed to take ~3 facilitation hours per week across the program year
+  const opCosts=sch*hpw*CFG.weeks*CFG.facilitatorRate*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
   const totalCosts=opCosts+FOUNDER;
   const net=productRev-totalCosts;
   const donNeeded=Math.max(-net,0);
-  return{tuit,audio,lic,schRev,productRev,opCosts,totalCosts,net,donNeeded,
-    totalSt:tot,ipC,onC,schools:sch,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
+  return{audio,lic,schRev,productRev,opCosts,totalCosts,net,donNeeded,
+    schools:sch,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -158,10 +156,9 @@ function renderYear(i){
     '<div class="yr-art-band-note">'+R.note+'</div>'+
     '</div></div></div>'+
     '<div class="yr-metrics" style="margin-top:2px">'+
-    '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.tuit)+'</span><div class="ml">Tuition</div></div>'+
-    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.schRev)+'</span><div class="ml">Partnerships</div></div>'+
+    '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.schRev)+'</span><div class="ml">Partnerships</div></div>'+
     '<div class="yr-metric"><span class="mv blue">'+fmtC(R.audio)+'</span><div class="ml">Audio</div></div>'+
-    '<div class="yr-metric"><span class="mv green">'+fmtC(R.lic)+'</span><div class="ml">Curriculum Sales</div></div>'+
+    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Curriculum Sales</div></div>'+
     '</div>'+
     '<div class="funding-goal-box">'+
     '<div class="fg-title">Year '+(i+1)+' Donation Goal</div>'+
@@ -175,9 +172,8 @@ function renderYear(i){
     )+
     '</div>'+
     '<div class="milestone-grid">'+
-    '<div class="milestone"><div class="mt"><strong>'+R.ipC+' in-person + '+R.onC+' online cohorts</strong>, serving '+R.totalSt+' students.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.schools+' partner school'+(R.schools===1?'':'s')+'</strong>, custom worlds built around their curriculum.</div></div>'+
-    '<div class="milestone"><div class="mt"><strong>'+R.audioTitles+' audio titles</strong>, '+fmt(R.audioUnits,0)+' units sold per title.</div></div>'+
+    '<div class="milestone"><div class="mt"><strong>'+R.audioTitles+' audio title'+(R.audioTitles===1?'':'s')+'</strong>, '+fmt(R.audioUnits,0)+' units sold per title.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.curriculumSales+' curriculum packages sold</strong>'+(R.curriculumSales===0?' (sales launch in Year 2).':', '+fmtC(R.lic)+' in one-time sales.')+'</div></div>'+
     '</div>';
 }
