@@ -87,6 +87,14 @@ h1,h2{font-family:'Berkshire Swash',serif;font-weight:normal}
 /* ── FOUNDER VIDEO ──────────────────────────────────────────────────── */
 .founder-video-section{background:#060d16;padding:40px 0}
 
+/* ── FOR SCHOOLS (PARTNERSHIP STEPS) ────────────────────────────────── */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:36px}
+@media(max-width:640px){.steps-grid{grid-template-columns:1fr}}
+.step-card{background:var(--bg4);border:1px solid var(--border2);padding:28px 24px}
+.step-num{font-family:'Berkshire Swash',serif;font-size:22px;color:var(--gold);opacity:.8;margin-bottom:8px;line-height:1}
+.step-title{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700}
+.step-body{font-size:15px;color:#fff;line-height:1.65}
+
 /* ── PRINCIPLES (OUR PHILOSOPHY) ────────────────────────────────────── */
 .principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .principle-card{background:var(--bg4);border:1px solid var(--border2);padding:32px 28px}
@@ -113,11 +121,14 @@ h1,h2{font-family:'Berkshire Swash',serif;font-weight:normal}
 .stream-card.s2::before{background:var(--teal3)}
 .stream-card.s3::before{background:var(--blue3)}
 .stream-card.s4::before{background:var(--green)}
+.stream-card.s5::before{background:var(--gold3)}
+.sc-wide{grid-column:1/-1}
 .sc-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
 .stream-card.s1 .sc-label{color:var(--gold2)}
 .stream-card.s2 .sc-label{color:var(--teal3)}
 .stream-card.s3 .sc-label{color:var(--blue3)}
 .stream-card.s4 .sc-label{color:var(--green)}
+.stream-card.s5 .sc-label{color:var(--gold3)}
 .sc-body{font-size:15px;color:#fff;line-height:1.65;font-weight:400}
 
 /* ── FUNDING NEED ───────────────────────────────────────────────────── */
@@ -162,7 +173,7 @@ h1,h2{font-family:'Berkshire Swash',serif;font-weight:normal}
 .yr-art-band-note{font-size:14px;color:rgba(255,255,255,.65);margin-top:6px;font-weight:400;line-height:1.6;max-width:600px}
 
 /* YEAR METRICS */
-.yr-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin:0 0 22px}
+.yr-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:0 0 22px}
 .yr-metric{background:var(--bg4);border:1px solid var(--border2);padding:18px 16px;text-align:center}
 .yr-metric .mv{font-size:clamp(15px,1.9vw,21px);font-weight:700;display:block;margin-bottom:4px;color:#fff}
 .yr-metric .mv.green{color:var(--green)}.yr-metric .mv.red{color:var(--red)}.yr-metric .mv.gold{color:var(--gold2)}.yr-metric .mv.blue{color:var(--blue3)}.yr-metric .mv.teal{color:var(--teal3)}
@@ -181,7 +192,7 @@ h1,h2{font-family:'Berkshire Swash',serif;font-weight:normal}
 .fg-break-even{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:700;padding:12px 0}
 
 /* YEAR MILESTONE GRID */
-.milestone-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.milestone-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:680px){.milestone-grid{grid-template-columns:1fr}}
 .milestone{padding:16px 18px;background:var(--bg4);border:1px solid var(--border2)}
 .milestone .mt{font-size:15px;color:#fff;line-height:1.6;font-weight:400}

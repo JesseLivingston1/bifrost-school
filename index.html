@@ -10,14 +10,14 @@
      ══════════════════════════════════════════════════════════════════ -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The Bifrost School is an RPG-driven tutoring program for homeschool and alternative education families. Students learn English, Math, and Music through immersive tabletop adventure, where every lesson is a quest.">
-<meta name="keywords" content="homeschool, homeschooling, alternative education, online school, RPG learning, tabletop learning, tutoring, small group learning, project-based learning, English tutoring, math tutoring, music education, homeschool co-op, microschool, unschooling, secular homeschool, online tutoring, immersive education">
-<meta property="og:title" content="The Bifrost School — RPG-Driven Learning for Homeschool Families">
-<meta property="og:description" content="Small-group tutoring where English, Math, and Music are taught through tabletop RPG adventure. In-person and online cohorts available.">
+<meta name="description" content="The Bifrost School partners with schools to design RPG learning experiences built around their curriculum, and runs the sessions. Immersive tabletop adventure where every lesson is a quest.">
+<meta name="keywords" content="school partnerships, RPG learning, tabletop learning, game-based learning, curriculum design, educational consultant, homeschool, alternative education, microschool, homeschool co-op, small group learning, project-based learning, immersive education">
+<meta property="og:title" content="The Bifrost School — RPG Learning Experiences for Schools">
+<meta property="og:description" content="We partner with schools to turn their curriculum into tabletop RPG adventure, and we run the sessions. In-person and online.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Bifrost School">
-<meta name="twitter:description" content="Where every lesson is a quest. RPG-driven tutoring for homeschool and alternative education families.">
+<meta name="twitter:description" content="Where every lesson is a quest. RPG learning experiences designed around your school's curriculum.">
 <link rel="canonical" href="https://bifrostschool.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 36'%3E%3Cpath d='M 4 34 A 28 28 0 0 1 60 34' fill='none' stroke='%23d4a84b' stroke-width='7'/%3E%3Cpath d='M 32 34 A 28 28 0 0 1 88 34' fill='none' stroke='%23d4a84b' stroke-width='7'/%3E%3Cpath d='M 60 34 A 28 28 0 0 1 116 34' fill='none' stroke='%23d4a84b' stroke-width='7'/%3E%3C/svg%3E">
 <title>The Bifrost School</title>
@@ -26,8 +26,8 @@
 </head>
 <body>
 
-<!-- FLOATING DONATE -->
-<button onclick="switchTab('donate')" class="float-donate" id="float-donate-btn">Donate</button>
+<!-- FLOATING CTA -->
+<button onclick="switchTab('contact')" class="float-donate" id="float-cta-btn">Partner With Us</button>
 
 <!-- TAB NAV -->
 <nav class="tab-nav">
@@ -99,6 +99,21 @@
         </div>
       </div>
       <p id="d-founder-video-caption" style="margin-top:20px;color:rgba(255,255,255,.55);font-size:15px;line-height:1.6"></p>
+    </div>
+  </div>
+
+  <!-- FOR SCHOOLS -->
+  <div class="section dark" style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:url(images/pillars-bg.jpg);background-size:cover;background-position:center 30%;filter:brightness(.18)"></div>
+    <div style="position:relative;z-index:2">
+      <div class="container">
+        <div class="reveal"><div class="eyebrow" id="d-forschools-eyebrow">For Schools</div></div>
+        <h2 class="section-title reveal d1" id="d-forschools-title">Bring Bifrost to Your School</h2>
+        <div class="rule reveal d2"></div>
+        <p class="section-body reveal d2" id="d-forschools-body"></p>
+        <div class="steps-grid reveal d3" id="d-forschools-steps"></div>
+        <div class="reveal d4"><button class="see-plan-btn" onclick="switchTab('contact')"><span id="d-forschools-cta">Start a Partnership</span> &rarr;</button></div>
+      </div>
     </div>
   </div>
 
@@ -300,7 +315,7 @@
           <div class="form-field"><label id="d-form-email-label">Email Address</label><input type="email" id="form-email" name="email" placeholder="you@email.com" required></div>
         </div>
         <div class="form-field"><label id="d-form-interest-label">I&rsquo;m interested as a&hellip;</label>
-          <select id="form-interest" name="interest"><option value="">Select one</option><option value="donor">Donor / Supporter</option><option value="family">Family seeking enrollment</option><option value="partner">Potential partner or sponsor</option><option value="educator">Educator interested in the curriculum</option><option value="other">Other</option></select>
+          <select id="form-interest" name="interest"><option value="">Select one</option><option value="school">School interested in partnering</option><option value="donor">Donor / Supporter</option><option value="family">Family seeking enrollment</option><option value="educator">Educator interested in the curriculum</option><option value="other">Other</option></select>
         </div>
         <div class="form-field"><label id="d-form-message-label">Message</label><textarea id="form-message" name="message" required></textarea></div>
         <button type="submit" class="submit-btn"><span id="d-form-submit-text">Send Message</span></button>

@@ -17,6 +17,7 @@ Typical edits:
 | Funding goal | `fundingGoal` and `budgetTotal` |
 | Budget modal categories | `budgetCategories` |
 | Donation tiers | `tiers` |
+| School partnership pricing | `partnershipFee` (placeholder — set your real rate) |
 | Development tab passphrase | `donorPassword` |
 | Donate button destination | `donateUrl` |
 

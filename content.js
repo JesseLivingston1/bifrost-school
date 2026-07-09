@@ -25,9 +25,20 @@ window.BIFROST_CONTENT = {
   donateUrl: "#",                  // "#" sends visitors to the contact form; replace with a real donation link when ready
 
   /* ---------- Hero (opening screen) ---------- */
-  heroLede: "Learning through fantasy storytelling.",
+  heroLede: "We partner with schools to turn their curriculum into epic quests.",
   heroSubLede: "The magic makes it real.",
   missionQuote: "Sometimes you have to forget the real world to remember what’s real.",
+
+  /* ---------- For Schools (partnership pitch) ---------- */
+  forSchoolsEyebrow: "For Schools",
+  forSchoolsTitle: "Bring Bifrost to Your School",
+  forSchoolsBody: "The Bifrost School works with schools as an embedded creative partner. We take the lessons your students are already learning, build an original RPG adventure world around them, and run the sessions ourselves, in person or online.",
+  forSchoolsSteps: [
+    { title: "Integrate", body: "We work with your teachers to map the units, lessons, and skills your students are studying." },
+    { title: "Design", body: "We build a custom adventure world where your curriculum becomes the magic, the monsters, and the quests." },
+    { title: "Run", body: "We run the weekly sessions ourselves, bringing the world to life while your students learn inside it." }
+  ],
+  forSchoolsCta: "Start a Partnership",
 
   /* ---------- Founder video ---------- */
   founderVideoFile: "",            // e.g. "founder_video.mp4" once the video exists; leave "" to show the placeholder
@@ -87,7 +98,7 @@ window.BIFROST_CONTENT = {
   milestones: [
     { num: "1", strong: "Build the narrative world.", body: "Contract writers and game designers to develop the RPG setting, characters, and story systems that anchor every subject." },
     { num: "2", strong: "Develop the curriculum.", body: "Collaborate with experienced educators to integrate English, Math, and Music in rigorous, standards-aligned ways." },
-    { num: "3", strong: "Run pilot cohorts.", body: "Launch in-person and online groups to test, gather feedback, and refine before full launch." },
+    { num: "3", strong: "Run pilot cohorts.", body: "Launch in-person and online groups and our first school partnerships to test, gather feedback, and refine before full launch." },
     { num: "4", strong: "Hire and train founding staff.", body: "Recruit, vet, and onboard the teachers and creative staff who will bring the Bifrost world to life and develop the training program that will define how we teach." },
     { num: "5", strong: "Build for scale.", body: "Finalize the platform, marketing, and curriculum sales infrastructure for sustainable growth from Year 1 onward." }
   ],
@@ -106,28 +117,30 @@ window.BIFROST_CONTENT = {
 
   /* ---------- Revenue streams ---------- */
   streamsEyebrow: "Revenue Streams",
-  streamsTitle: "Four Ways the School Sustains Itself",
-  streamsBody: "The Bifrost School is designed with multiple overlapping revenue streams, each reinforcing the others. Tuition anchors the model. Products extend the mission and generate income with minimal additional cost.",
+  streamsTitle: "Five Ways the School Sustains Itself",
+  streamsBody: "The Bifrost School is designed with multiple overlapping revenue streams, each reinforcing the others. School partnerships and tuition anchor the model. Products extend the mission and generate income with minimal additional cost.",
   streams: [
-    { cls: "s1", label: "In-Person Program", body: "Small groups of 4–5 students meeting weekly at the school's home base (founder's home)." },
-    { cls: "s2", label: "Online Program", body: "The same RPG-driven curriculum delivered virtually, reaching students nationwide." },
-    { cls: "s3", label: "Audio Adventures", body: "Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions." },
-    { cls: "s4", label: "Curriculum Sales", body: "Other tutors, micro-schools, and homeschool co-ops purchase the Bifrost curriculum as one-time packages." }
+    { cls: "s1 sc-wide", label: "School Partnerships", body: "Schools hire The Bifrost School to design a custom RPG learning experience built around their curriculum, and to run the sessions. Each partnership is a year-long engagement." },
+    { cls: "s2", label: "In-Person Program", body: "Small groups of 4–5 students meeting weekly at the school's home base (founder's home)." },
+    { cls: "s3", label: "Online Program", body: "The same RPG-driven curriculum delivered virtually, reaching students nationwide." },
+    { cls: "s4", label: "Audio Adventures", body: "Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions." },
+    { cls: "s5", label: "Curriculum Sales", body: "Other tutors, micro-schools, and homeschool co-ops purchase the Bifrost curriculum as one-time packages." }
   ],
 
   /* ---------- Five-year roadmap ---------- */
   roadmapEyebrow: "The Roadmap",
   roadmapTitle: "Five Years to Full Capacity",
-  roadmapIntro: "Once the development year is complete, here is how The Bifrost School grows from its first cohorts to a self-sustaining operation.",
+  roadmapIntro: "Once the development year is complete, here is how The Bifrost School grows from its first cohorts and school partnerships to a self-sustaining operation.",
   /* One entry per year. ipC = in-person cohorts, onC = online cohorts,
-     audioT = audio titles for sale, audioU = units sold per title,
-     lic = curriculum packages sold that year (one-time sales). */
+     sch = partner schools, audioT = audio titles for sale,
+     audioU = units sold per title, lic = curriculum packages sold
+     that year (one-time sales). */
   yearRamps: [
-    { ipC: 2, onC: 3, audioT: 1, audioU: 20, lic: 0, label: "Launch", note: "Opening with 3+3 cohorts at roughly 40% capacity. Donations remain essential as the program builds its audience." },
-    { ipC: 4, onC: 4, audioT: 3, audioU: 35, lic: 2, label: "Traction", note: "Growing to 4+4 cohorts. First curriculum sales. Donation need declining." },
-    { ipC: 4, onC: 7, audioT: 5, audioU: 60, lic: 6, label: "Growth", note: "Near full in-person capacity. Online cohorts growing. Curriculum and audio sales becoming meaningful." },
-    { ipC: 4, onC: 9, audioT: 8, audioU: 90, lic: 12, label: "Scale", note: "Approaching full capacity. Product revenue growing. Donation need closing significantly." },
-    { ipC: 4, onC: 11, audioT: 10, audioU: 120, lic: 18, label: "Capacity", note: "Full scale. Four revenue streams working together. The school approaches self-sufficiency." }
+    { ipC: 2, onC: 3, sch: 1, audioT: 1, audioU: 20, lic: 0, label: "Launch", note: "Opening with 3+3 cohorts and our first partner school. Donations remain essential as the program builds its audience." },
+    { ipC: 4, onC: 4, sch: 2, audioT: 3, audioU: 35, lic: 2, label: "Traction", note: "Growing to 4+4 cohorts and two school partnerships. First curriculum sales. Donation need declining." },
+    { ipC: 4, onC: 7, sch: 4, audioT: 5, audioU: 60, lic: 6, label: "Growth", note: "Near full in-person capacity. Four partner schools. Curriculum and audio sales becoming meaningful." },
+    { ipC: 4, onC: 9, sch: 6, audioT: 8, audioU: 90, lic: 12, label: "Scale", note: "Approaching full capacity with six partner schools. Product revenue growing. Donation need closing significantly." },
+    { ipC: 4, onC: 11, sch: 8, audioT: 10, audioU: 120, lic: 18, label: "Capacity", note: "Full scale. Five revenue streams working together. The school reaches self-sufficiency." }
   ],
 
   /* ---------- Financial model assumptions ----------
@@ -143,11 +156,17 @@ window.BIFROST_CONTENT = {
   marketing: 200,    // marketing budget per month
   audioPrice: 12,        // price per audio adventure unit
   curriculumPrice: 500,  // one-time price per curriculum package
+  /* PLACEHOLDER: what a partner school pays per year for a full
+     engagement (curriculum integration + world design + weekly
+     facilitation). Adjust to your real pricing. The model also
+     assumes each partner school costs about one cohort's worth of
+     staff time per year to serve. */
+  partnershipFee: 12000,
 
   /* ---------- Revenue chart ---------- */
   chartEyebrow: "Revenue Projection",
   chartTitle: "Donations Needed Each Year",
-  chartBody: "As program revenue grows year over year, the donation need declines. By Year 5, the school approaches self-sufficiency.",
+  chartBody: "As program and partnership revenue grow year over year, the donation need declines. By Year 5, the school becomes self-sustaining.",
 
   /* ---------- Donate tab ---------- */
   ctaEyebrow: "Join the Quest",
@@ -181,7 +200,7 @@ window.BIFROST_CONTENT = {
 
   /* ---------- Contact tab ---------- */
   contactTitle: "Contact Us",
-  contactBody: "Whether you’re a prospective donor, a family interested in enrollment, or an educator interested in the curriculum, we’d love to hear from you.",
+  contactBody: "Whether you’re a school interested in partnering, a family interested in enrollment, or a prospective donor, we’d love to hear from you.",
   formNameLabel: "Your Name",
   formEmailLabel: "Email Address",
   formInterestLabel: "I’m interested as a…",

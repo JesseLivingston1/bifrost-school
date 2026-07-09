@@ -19,19 +19,21 @@ const ART_YEAR_POS=['center 70%','center 62%','center 65%','center 35%','center 
 
 // ── FIVE-YEAR FINANCIAL MODEL ─────────────────────────────────────────────────
 function computeYear(r){
-  const ipC=r.ipC,onC=r.onC,sz=CFG.cohortSize,wk=CFG.weeks/48;
+  const ipC=r.ipC,onC=r.onC,sch=r.sch||0,sz=CFG.cohortSize,wk=CFG.weeks/48;
   const ipSt=ipC*sz,onSt=onC*sz,tot=ipSt+onSt;
   const tuit=ipSt*CFG.priceIP*12*wk+onSt*CFG.priceON*12*wk+tot*50+tot*30;
   const audio=r.audioT*CFG.audioPrice*r.audioU;
   const lic=r.lic*CFG.curriculumPrice;
-  const productRev=tuit+audio+lic;
+  const schRev=sch*(CFG.partnershipFee||0);
+  const productRev=tuit+audio+lic+schRev;
   const pay=CFG.payroll/100,hpw=3;
-  const opCosts=ipC*hpw*CFG.weeks*CFG.rateIP*(1+pay)+onC*hpw*CFG.weeks*CFG.rateON*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
+  // Each partner school is assumed to cost roughly one cohort's worth of staff time per year
+  const opCosts=(ipC+sch)*hpw*CFG.weeks*CFG.rateIP*(1+pay)+onC*hpw*CFG.weeks*CFG.rateON*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
   const totalCosts=opCosts+FOUNDER;
   const net=productRev-totalCosts;
   const donNeeded=Math.max(-net,0);
-  return{tuit,audio,lic,productRev,opCosts,totalCosts,net,donNeeded,
-    totalSt:tot,ipC,onC,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
+  return{tuit,audio,lic,schRev,productRev,opCosts,totalCosts,net,donNeeded,
+    totalSt:tot,ipC,onC,schools:sch,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -60,6 +62,11 @@ function injectContent(){
   if(CFG.founderVideoFile){if(fvSrc)fvSrc.src=CFG.founderVideoFile;if(fvVideo){fvVideo.load();fvVideo.style.display='block';}if(fvHolder)fvHolder.style.display='none';}
   st('d-founder-video-eyebrow',CFG.founderVideoEyebrow||'From the Founder');
   st('d-founder-video-caption',CFG.founderVideoCaption||'');
+  st('d-forschools-eyebrow',CFG.forSchoolsEyebrow||'For Schools');
+  st('d-forschools-title',CFG.forSchoolsTitle||'');
+  ht('d-forschools-body',CFG.forSchoolsBody||'');
+  ht('d-forschools-steps',(CFG.forSchoolsSteps||[]).map((s,i)=>'<div class="step-card"><div class="step-num">'+(i+1)+'</div><div class="step-title">'+s.title+'</div><div class="step-body">'+s.body+'</div></div>').join(''));
+  st('d-forschools-cta',CFG.forSchoolsCta||'Start a Partnership');
   ht('d-wmud-grid',(CFG.wmudCards||[]).map((c,i)=>{
     const isLast=i===(CFG.wmudCards.length-1)&&(CFG.wmudCards.length%2!==0);
     return '<div class="wmud-card'+(isLast?' wmud-card--wide':'')+'"><div class="wmud-title">'+c.title+'</div><div class="wmud-body">'+c.body+'</div></div>';
@@ -102,8 +109,6 @@ function injectContent(){
   st('d-form-success-text',CFG.formSuccessText||'');
   const db=document.getElementById('d-donate-btn');
   if(db&&CFG.donateUrl&&CFG.donateUrl!=='#'){db.href=CFG.donateUrl;db.target='_blank';}
-  const fb=document.getElementById('float-donate-btn');
-  if(fb&&CFG.donateUrl&&CFG.donateUrl!=='#'){fb.href=CFG.donateUrl;fb.target='_blank';}
   ht('d-tiers',(CFG.tiers||[]).map((t,i)=>'<div class="tier'+(t.featured?' featured':'')+((CFG.tiers.length===5&&i>=3)?' tier-offset':'')+'"><span class="tier-amount">$'+fmt(t.amount)+'</span><span class="tier-name">'+t.name+'</span><div class="tier-desc">'+t.desc+'</div></div>').join(''));
   const nav=document.getElementById('year-nav');
   if(nav)nav.innerHTML=(CFG.yearRamps||[]).map((r,i)=>'<button class="yr-btn'+(i===0?' active':'')+'" data-yr="'+i+'">Year '+(i+1)+'<small>'+r.label+'</small></button>').join('');
@@ -154,8 +159,9 @@ function renderYear(i){
     '</div></div></div>'+
     '<div class="yr-metrics" style="margin-top:2px">'+
     '<div class="yr-metric"><span class="mv" style="color:var(--gold)">'+fmtC(R.tuit)+'</span><div class="ml">Tuition</div></div>'+
+    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.schRev)+'</span><div class="ml">Partnerships</div></div>'+
     '<div class="yr-metric"><span class="mv blue">'+fmtC(R.audio)+'</span><div class="ml">Audio</div></div>'+
-    '<div class="yr-metric"><span class="mv teal">'+fmtC(R.lic)+'</span><div class="ml">Curriculum Sales</div></div>'+
+    '<div class="yr-metric"><span class="mv green">'+fmtC(R.lic)+'</span><div class="ml">Curriculum Sales</div></div>'+
     '</div>'+
     '<div class="funding-goal-box">'+
     '<div class="fg-title">Year '+(i+1)+' Donation Goal</div>'+
@@ -170,6 +176,7 @@ function renderYear(i){
     '</div>'+
     '<div class="milestone-grid">'+
     '<div class="milestone"><div class="mt"><strong>'+R.ipC+' in-person + '+R.onC+' online cohorts</strong>, serving '+R.totalSt+' students.</div></div>'+
+    '<div class="milestone"><div class="mt"><strong>'+R.schools+' partner school'+(R.schools===1?'':'s')+'</strong>, custom worlds built around their curriculum.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.audioTitles+' audio titles</strong>, '+fmt(R.audioUnits,0)+' units sold per title.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.curriculumSales+' curriculum packages sold</strong>'+(R.curriculumSales===0?' (sales launch in Year 2).':', '+fmtC(R.lic)+' in one-time sales.')+'</div></div>'+
     '</div>';
