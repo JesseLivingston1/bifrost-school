@@ -52,14 +52,7 @@ function injectContent(){
   st('d-hero-tagline',CFG.heroSubLede||'');
   st('d-mission-quote',CFG.missionQuote||'');
   st('d-principles-eyebrow',CFG.principlesEyebrow||'Our Philosophy');
-  st('d-principles-subtitle',CFG.principlesSubtitle||'');
   if(CFG.principles&&CFG.principles.length){const pg=document.getElementById('d-principles-grid');if(pg){pg.innerHTML=CFG.principles.map(p=>'<div class="principle-card"><div class="principle-title">'+p.title+'</div><div class="principle-body">'+p.body+'</div></div>').join('');}}
-  const fvSrc=document.getElementById('founder-video-src');
-  const fvVideo=document.getElementById('founder-video');
-  const fvHolder=document.getElementById('founder-video-placeholder');
-  if(CFG.founderVideoFile){if(fvSrc)fvSrc.src=CFG.founderVideoFile;if(fvVideo){fvVideo.load();fvVideo.style.display='block';}if(fvHolder)fvHolder.style.display='none';}
-  st('d-founder-video-eyebrow',CFG.founderVideoEyebrow||'From the Founder');
-  st('d-founder-video-caption',CFG.founderVideoCaption||'');
   st('d-forschools-eyebrow',CFG.forSchoolsEyebrow||'For Schools');
   st('d-forschools-title',CFG.forSchoolsTitle||'');
   ht('d-forschools-body',CFG.forSchoolsBody||'');

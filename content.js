@@ -30,7 +30,7 @@ window.BIFROST_CONTENT = {
   missionQuote: "Sometimes you have to forget the real world to remember what’s real.",
 
   /* ---------- For Schools (partnership pitch) ---------- */
-  forSchoolsEyebrow: "For Schools",
+  forSchoolsEyebrow: "What We Do",
   forSchoolsTitle: "Bring Bifrost to Your School",
   forSchoolsBody: "The Bifrost School works with schools as an embedded creative partner. We take the lessons your students are already learning, build an original RPG adventure world around them, and run the sessions ourselves, in person or online.",
   forSchoolsSteps: [
@@ -40,14 +40,8 @@ window.BIFROST_CONTENT = {
   ],
   forSchoolsCta: "Start a Partnership",
 
-  /* ---------- Founder video ---------- */
-  founderVideoFile: "",            // e.g. "founder_video.mp4" once the video exists; leave "" to show the placeholder
-  founderVideoEyebrow: "From the Founder",
-  founderVideoCaption: "",
-
   /* ---------- Our Philosophy ---------- */
   principlesEyebrow: "Our Philosophy",
-  principlesSubtitle: "The Bifrost School is built on four principles, each one a doorway between the world of the story and the world you actually live in.",
   principles: [
     {
       title: "Know the Magic Within You",
