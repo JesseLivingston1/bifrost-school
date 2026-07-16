@@ -18,20 +18,29 @@ const ART_YEARS=['images/year-art-1.jpg','images/year-art-2.jpg','images/year-ar
 const ART_YEAR_POS=['center 70%','center 62%','center 65%','center 35%','center 35%'];
 
 // ── FIVE-YEAR FINANCIAL MODEL ─────────────────────────────────────────────────
-function computeYear(r){
-  const sch=r.sch||0;
+// `prev` is the prior year's ramp (undefined for Year 1): new schools need a
+// full world build, returning schools an annual refresh, new audio titles a
+// production pass.
+function computeYear(r,prev){
+  const sch=r.sch||0,prevSch=(prev&&prev.sch)||0,prevT=(prev&&prev.audioT)||0;
+  const newSch=Math.max(sch-prevSch,0),returning=Math.min(prevSch,sch);
+  const newTitles=Math.max(r.audioT-prevT,0);
   const audio=r.audioT*CFG.audioPrice*r.audioU;
   const lic=r.lic*CFG.curriculumPrice;
   const schRev=sch*(CFG.partnershipFee||0);
   const productRev=audio+lic+schRev;
   const pay=CFG.payroll/100,hpw=3;
   // Each partner school is assumed to take ~3 facilitation hours per week across the program year
-  const opCosts=sch*hpw*CFG.weeks*CFG.facilitatorRate*(1+pay)+CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
+  const opCosts=sch*hpw*CFG.weeks*CFG.facilitatorRate*(1+pay)
+    +newSch*(CFG.worldBuildCost||0)+returning*(CFG.worldRefreshCost||0)
+    +newTitles*(CFG.audioProdCost||0)
+    +CFG.platform*12+CFG.marketing*12+FIXED.insurance+FIXED.supplies+FIXED.admin+FIXED.misc;
   const totalCosts=opCosts+FOUNDER;
   const net=productRev-totalCosts;
-  const donNeeded=Math.max(-net,0);
+  // Amount that must be RAISED to close the gap, grossed up for the fiscal sponsor fee
+  const donNeeded=net<0?-net/(1-(CFG.fiscalRate||0)/100):0;
   return{audio,lic,schRev,productRev,opCosts,totalCosts,net,donNeeded,
-    schools:sch,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
+    schools:sch,newSchools:newSch,audioTitles:r.audioT,audioUnits:r.audioU,curriculumSales:r.lic,label:r.label,note:r.note};
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -121,7 +130,7 @@ function renderFundingBar(){
 function renderTotalRaisedBar(){
   const raised=CFG.amountRaised||0;
   const devGoal=CFG.fundingGoal||300000;
-  const years=(CFG.yearRamps||[]).map(r=>computeYear(r));
+  const years=(CFG.yearRamps||[]).map((r,i,a)=>computeYear(r,a[i-1]));
   const opTotal=years.reduce((sum,r)=>sum+r.donNeeded,0);
   const totalNeeded=devGoal+opTotal;
   const pct=totalNeeded>0?Math.min(raised/totalNeeded*100,100):0;
@@ -141,7 +150,7 @@ function switchYear(i){
 
 function renderYear(i){
   const ramp=(CFG.yearRamps||[])[i];if(!ramp)return;
-  const R=computeYear(ramp);
+  const R=computeYear(ramp,(CFG.yearRamps||[])[i-1]);
   const el=document.getElementById('year-content');if(!el)return;
   const artSrc=ART_YEARS[i]||ART_YEARS[0];
   const pos=ART_YEAR_POS[i]||'center 55%';
@@ -163,12 +172,12 @@ function renderYear(i){
     '<div class="fg-item"><span class="fgv" style="color:rgba(255,255,255,.55)">'+fmtC(R.totalCosts)+'</span><div class="fgl">Total Costs (incl. all staff)</div></div>'+
     '</div>'+
     (R.donNeeded>0
-      ?'<div class="fg-donation-goal"><div class="fg-donation-label">Donations needed to close the gap</div><div class="fg-donation-amount">'+fmtC(R.donNeeded)+'</div></div>'
+      ?'<div class="fg-donation-goal"><div class="fg-donation-label">Donations needed to close the gap</div><div class="fg-donation-amount">'+fmtC(Math.round(R.donNeeded))+'</div><div class="fg-donation-note">Includes '+(CFG.fiscalRate||0)+'% fiscal sponsor fee</div></div>'
       :'<div class="fg-break-even">Program revenue covers all costs</div>'
     )+
     '</div>'+
     '<div class="milestone-grid">'+
-    '<div class="milestone"><div class="mt"><strong>'+R.schools+' partner school'+(R.schools===1?'':'s')+'</strong>, custom worlds built around their curriculum.</div></div>'+
+    '<div class="milestone"><div class="mt"><strong>'+R.schools+' partner school'+(R.schools===1?'':'s')+(R.newSchools>0&&R.newSchools<R.schools?' ('+R.newSchools+' new)':'')+'</strong>, custom worlds built around their curriculum.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.audioTitles+' audio title'+(R.audioTitles===1?'':'s')+'</strong>, '+fmt(R.audioUnits,0)+' units sold per title.</div></div>'+
     '<div class="milestone"><div class="mt"><strong>'+R.curriculumSales+' curriculum packages sold</strong>'+(R.curriculumSales===0?' (sales launch in Year 2).':', '+fmtC(R.lic)+' in one-time sales.')+'</div></div>'+
     '</div>';
@@ -177,7 +186,7 @@ function renderYear(i){
 // ── REVENUE CHART ─────────────────────────────────────────────────────────────
 function renderChart(){
   const el=document.getElementById('all-years-chart');if(!el)return;
-  const years=(CFG.yearRamps||[]).map(r=>computeYear(r));
+  const years=(CFG.yearRamps||[]).map((r,i,a)=>computeYear(r,a[i-1]));
   const maxVal=Math.max(...years.map(r=>Math.max(r.productRev,r.donNeeded)),1);
   el.innerHTML=years.map((R,i)=>{
     const revH=maxVal>0?R.productRev/maxVal*100:0;

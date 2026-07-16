@@ -90,8 +90,8 @@ window.BIFROST_CONTENT = {
 
   /* ---------- Revenue streams ---------- */
   streamsEyebrow: "Revenue Streams",
-  streamsTitle: "Three Ways the School Sustains Itself",
-  streamsBody: "The Bifrost School is designed with overlapping revenue streams, each reinforcing the others. School partnerships anchor the model. Products extend the mission and generate income with minimal additional cost.",
+  streamsTitle: "How the School Sustains Itself",
+  streamsBody: "School partnerships are the primary engine of the model: they fund the work and prove it in real classrooms. Audio adventures and curriculum sales are supplementary products that extend the mission beyond our partner schools.",
   streams: [
     { cls: "s1", label: "School Partnerships", body: "Schools hire The Bifrost School to design a custom RPG learning experience built around their curriculum, and to run the sessions, in person or online. Each partnership is a year-long engagement." },
     { cls: "s2", label: "Audio Adventures", body: "Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions." },
@@ -110,29 +110,36 @@ window.BIFROST_CONTENT = {
     { sch: 3, audioT: 3, audioU: 35, lic: 2, label: "Traction", note: "Three school partnerships. First curriculum sales. Donation need declining." },
     { sch: 5, audioT: 5, audioU: 60, lic: 6, label: "Growth", note: "Five partner schools. Curriculum and audio sales becoming meaningful." },
     { sch: 7, audioT: 8, audioU: 90, lic: 12, label: "Scale", note: "Seven partner schools. Product revenue growing. Donation need closing significantly." },
-    { sch: 9, audioT: 10, audioU: 120, lic: 18, label: "Capacity", note: "Nine partner schools. Three revenue streams working together. The school reaches self-sufficiency." }
+    { sch: 9, audioT: 10, audioU: 120, lic: 18, label: "Capacity", note: "Nine partner schools, with audio and curriculum sales supplementing. Partnership revenue covers all costs and the school reaches self-sufficiency." }
   ],
 
   /* ---------- Financial model assumptions ----------
      Used to calculate revenue, costs, and donation need per year. */
-  weeks: 48,             // program weeks per year at each partner school
+  weeks: 36,             // program weeks per year at each partner school (US school year)
   facilitatorRate: 28,   // hourly rate for session facilitation staff
   payroll: 18,           // payroll tax + overhead, percent
   platform: 80,          // software/platform cost per month
   marketing: 200,        // marketing budget per month
   audioPrice: 12,        // price per audio adventure unit
+  audioProdCost: 1500,   // production cost per NEW audio title (in-house narration + edit)
   curriculumPrice: 500,  // one-time price per curriculum package
-  /* PLACEHOLDER: what a partner school pays per year for a full
-     engagement (curriculum integration + world design + weekly
-     facilitation). Adjust to your real pricing. The model assumes
-     each partner school takes about 3 facilitation hours per week
-     at facilitatorRate to serve. */
-  partnershipFee: 24000,
+  worldBuildCost: 7200,  // design/writing labor to build a NEW school's world (~120 hr @ $60)
+  worldRefreshCost: 2400,// annual content refresh per RETURNING school (~40 hr @ $60)
+  /* Fiscal sponsor % applied to donations raised in Years 1-5.
+     Confirm with Fractured Atlas whether earned (partnership/product)
+     revenue is also assessed; the model assumes donations only. */
+  fiscalRate: 8,
+  /* What a partner school pays per year for a full engagement:
+     curriculum integration + custom world design + weekly facilitation.
+     $30,000 over a 36-week engagement is about $833/week. At this price
+     the Year 5 model clears all costs (including world-design labor)
+     with enough margin to survive losing one school. */
+  partnershipFee: 30000,
 
   /* ---------- Revenue chart ---------- */
   chartEyebrow: "Revenue Projection",
   chartTitle: "Donations Needed Each Year",
-  chartBody: "As program and partnership revenue grow year over year, the donation need declines. By Year 5, the school becomes self-sustaining.",
+  chartBody: "As partnership revenue grows year over year, the donation need declines. By Year 5, revenue covers all costs, including staff and the world-design work behind every partnership, and the school becomes self-sustaining.",
 
   /* ---------- Donate tab ---------- */
   ctaEyebrow: "Join the Quest",
