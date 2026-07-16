@@ -76,7 +76,7 @@ h1,h2{font-family:'Berkshire Swash',serif;font-weight:normal}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
 /* ── MISSION QUOTE ──────────────────────────────────────────────────── */
-.mission{background:var(--bg3);min-height:240px;display:flex;align-items:center;justify-content:center;text-align:center;padding:56px 80px}
+.mission{background:var(--bg2);min-height:240px;display:flex;align-items:center;justify-content:center;text-align:center;padding:56px 80px}
 .mission blockquote{font-family:'Berkshire Swash',serif;font-weight:normal;font-size:clamp(26px,5vw,38px);color:#fff;max-width:760px;line-height:1.5}
 
 /* ── FOR SCHOOLS (PARTNERSHIP STEPS) ────────────────────────────────── */
