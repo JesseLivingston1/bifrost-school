@@ -93,7 +93,7 @@ window.BIFROST_CONTENT = {
   streamsTitle: "Three Ways the School Sustains Itself",
   streamsBody: "The Bifrost School is designed with overlapping revenue streams, each reinforcing the others. School partnerships anchor the model. Products extend the mission and generate income with minimal additional cost.",
   streams: [
-    { cls: "s1 sc-wide", label: "School Partnerships", body: "Schools hire The Bifrost School to design a custom RPG learning experience built around their curriculum, and to run the sessions, in person or online. Each partnership is a year-long engagement." },
+    { cls: "s1", label: "School Partnerships", body: "Schools hire The Bifrost School to design a custom RPG learning experience built around their curriculum, and to run the sessions, in person or online. Each partnership is a year-long engagement." },
     { cls: "s2", label: "Audio Adventures", body: "Story-driven audio content that extends the curriculum beyond the classroom. Narrated and produced in-house, sold as standalone digital products and subscriptions." },
     { cls: "s3", label: "Curriculum Sales", body: "Other tutors, micro-schools, and homeschool co-ops purchase the Bifrost curriculum as one-time packages." }
   ],
