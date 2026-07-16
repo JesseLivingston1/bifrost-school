@@ -40,27 +40,6 @@ window.BIFROST_CONTENT = {
   ],
   forSchoolsCta: "Start a Partnership",
 
-  /* ---------- Our Philosophy ---------- */
-  principlesEyebrow: "Our Philosophy",
-  principles: [
-    {
-      title: "Know the Magic Within You",
-      body: "Discover the real-life magic abilities you already possess. Creativity, empathy, curiosity, courage: these are not soft skills. They are the most powerful forces in the world, and they live in you."
-    },
-    {
-      title: "See the Wonder Around You",
-      body: "The world is stranger and more beautiful than it appears. Learning to see it that way, to notice, to question, to be genuinely surprised, changes everything about how you move through it."
-    },
-    {
-      title: "Face the Challenge Before You",
-      body: "Every obstacle is a quest in disguise. The hard thing in front of you is not in the way. It is the way. The Bifrost School trains students to turn toward difficulty, not away from it."
-    },
-    {
-      title: "Live the Adventure That Calls You",
-      body: "There is a real-life adventure out there waiting for you. Not a metaphor: an actual path, shaped by your choices, your skills, and your willingness to step forward. School is where you prepare for it."
-    }
-  ],
-
   /* ---------- What Makes Us Different (cards) ---------- */
   wmudCards: [
     {
@@ -158,17 +137,12 @@ window.BIFROST_CONTENT = {
   /* ---------- Donate tab ---------- */
   ctaEyebrow: "Join the Quest",
   ctaTitle: "Support The Bifrost School",
-  ctaBody: "Every dollar brings a child closer to a classroom where learning feels like an adventure. Your support bridges the gap between development and a self-sustaining school.",
-  donateBtnText: "Express Interest in Donating",
-  tiers: [
-    { amount: 100, name: "Apprentice", desc: "Covers one month of curriculum materials: dice, maps, and props for a full pilot group.", featured: false },
-    { amount: 500, name: "Adventurer", desc: "Funds one week of the narrative designer’s time building the original fantasy world.", featured: false },
-    { amount: 2500, name: "Champion", desc: "Covers one full month of the educator contractor’s time running and refining pilot programs.", featured: true },
-    { amount: 10000, name: "Legendary", desc: "Funds roughly one month of full development operations, keeping the school on track toward launch.", featured: false },
-    { amount: 50000, name: "Realm Builder", desc: "Funds one full quarter of the development year, a transformational investment in getting the school built.", featured: false }
-  ],
-  fiscalNote: "Fiscal sponsorship application in progress",
-  fiscalNote2: "Donations will be tax-deductible under IRC §501(c)(3) upon approval",
+  ctaGoalLabel: "Current Funding Goal",
+  ctaBody: "Every gift brings a child closer to a classroom where learning feels like an adventure. Your support bridges the gap between development and a self-sustaining school.",
+  donateBtnText: "Donate",
+  fiscalNote: "Fiscally sponsored under IRC §501(c)(3)",
+  fiscalNote2: "Donations are tax-deductible",
+  devPlanNote: "Want to see the full development plan and budget? Reach out and we'll share the password.",
 
   /* ---------- About tab ---------- */
   aboutStoryTitle: "How The Bifrost School Came to Be",

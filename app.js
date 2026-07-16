@@ -51,8 +51,6 @@ function injectContent(){
   st('d-hero-lede',CFG.heroLede||'');
   st('d-hero-tagline',CFG.heroSubLede||'');
   st('d-mission-quote',CFG.missionQuote||'');
-  st('d-principles-eyebrow',CFG.principlesEyebrow||'Our Philosophy');
-  if(CFG.principles&&CFG.principles.length){const pg=document.getElementById('d-principles-grid');if(pg){pg.innerHTML=CFG.principles.map(p=>'<div class="principle-card"><div class="principle-title">'+p.title+'</div><div class="principle-body">'+p.body+'</div></div>').join('');}}
   st('d-forschools-eyebrow',CFG.forSchoolsEyebrow||'For Schools');
   st('d-forschools-title',CFG.forSchoolsTitle||'');
   ht('d-forschools-body',CFG.forSchoolsBody||'');
@@ -83,8 +81,11 @@ function injectContent(){
   renderTotalRaisedBar();
   st('d-cta-eyebrow',CFG.ctaEyebrow||'');
   st('d-cta-title',CFG.ctaTitle||'');
+  st('d-cta-goal-amount',fmtC(CFG.fundingGoal||254000));
+  st('d-cta-goal-label',CFG.ctaGoalLabel||'Current Funding Goal');
   ht('d-cta-body',CFG.ctaBody||'');
   st('d-donate-btn-text',CFG.donateBtnText||'');
+  ht('d-cta-devplan-note',CFG.devPlanNote||'');
   ht('d-about-story',paras(CFG.aboutStory));
   st('d-about-story-title',CFG.aboutStoryTitle||'');
   st('d-about-founder-name',CFG.aboutFounderTitle||'Jesse Livingston');
@@ -100,7 +101,6 @@ function injectContent(){
   st('d-form-success-text',CFG.formSuccessText||'');
   const db=document.getElementById('d-donate-btn');
   if(db&&CFG.donateUrl&&CFG.donateUrl!=='#'){db.href=CFG.donateUrl;db.target='_blank';}
-  ht('d-tiers',(CFG.tiers||[]).map((t,i)=>'<div class="tier'+(t.featured?' featured':'')+((CFG.tiers.length===5&&i>=3)?' tier-offset':'')+'"><span class="tier-amount">$'+fmt(t.amount)+'</span><span class="tier-name">'+t.name+'</span><div class="tier-desc">'+t.desc+'</div></div>').join(''));
   const nav=document.getElementById('year-nav');
   if(nav)nav.innerHTML=(CFG.yearRamps||[]).map((r,i)=>'<button class="yr-btn'+(i===0?' active':'')+'" data-yr="'+i+'">Year '+(i+1)+'<small>'+r.label+'</small></button>').join('');
   document.querySelectorAll('.yr-btn').forEach(b=>b.addEventListener('click',()=>switchYear(parseInt(b.dataset.yr))));
@@ -113,6 +113,9 @@ function renderFundingBar(){
   const pct=goal>0?Math.min(raised/goal*100,100):0;
   const bar=document.getElementById('d-funding-bar');if(bar)bar.style.width=pct+'%';
   st('d-funding-pct',Math.round(pct)+'% funded');
+  const ctaBar=document.getElementById('d-cta-bar');if(ctaBar)ctaBar.style.width=pct+'%';
+  st('d-cta-raised',fmtC(raised)+' raised');
+  st('d-cta-pct',Math.round(pct)+'% funded');
 }
 
 function renderTotalRaisedBar(){

@@ -90,17 +90,6 @@
     </div>
   </div>
 
-  <!-- WHAT MAKES US DIFFERENT -->
-  <div class="section" style="position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background-image:url(images/section-bg.jpg);background-size:cover;background-position:70% center;filter:brightness(.18)"></div>
-    <div class="container" style="position:relative;z-index:2">
-      <div class="reveal"><div class="eyebrow">What Makes Us Different</div></div>
-      <h2 class="section-title reveal d1">Learning as Adventure</h2>
-      <div class="rule reveal d2"></div>
-      <div class="wmud-grid reveal d3" id="d-wmud-grid"></div>
-    </div>
-  </div>
-
   <!-- MISSION QUOTE -->
   <div class="mission reveal" style="background:#0a0e18;padding:0">
     <div class="mission-img-wrap">
@@ -111,11 +100,14 @@
     </div>
   </div>
 
-  <!-- PRINCIPLES (OUR PHILOSOPHY) -->
-  <div class="section dark principles-section reveal">
-    <div class="section-inner" style="max-width:860px;margin:0 auto;padding:80px 24px">
-      <div class="eyebrow" id="d-principles-eyebrow">Our Philosophy</div>
-      <div class="principles-grid" id="d-principles-grid" style="margin-top:32px"></div>
+  <!-- WHAT MAKES US DIFFERENT -->
+  <div class="section" style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:url(images/section-bg.jpg);background-size:cover;background-position:70% center;filter:brightness(.18)"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="reveal"><div class="eyebrow">What Makes Us Different</div></div>
+      <h2 class="section-title reveal d1">Learning as Adventure</h2>
+      <div class="rule reveal d2"></div>
+      <div class="wmud-grid reveal d3" id="d-wmud-grid"></div>
     </div>
   </div>
 
@@ -222,12 +214,18 @@
         <div class="reveal"><div class="eyebrow" style="color:var(--gold)" id="d-cta-eyebrow">Join the Quest</div></div>
         <h2 class="section-title reveal d1" style="color:var(--gold2)" id="d-cta-title">Support The Bifrost School</h2>
         <div class="rule reveal d2" style="margin:20px auto 28px;background:linear-gradient(90deg,var(--gold),transparent)"></div>
-        <p class="section-body reveal d2" id="d-cta-body" style="margin:0 auto 48px;text-align:center"></p>
-        <div class="tiers reveal d3" id="d-tiers"></div>
+        <div class="funding-amount reveal d2" style="text-align:center" id="d-cta-goal-amount">$254,000</div>
+        <div class="funding-sub reveal d2" style="text-align:center" id="d-cta-goal-label">Current Funding Goal</div>
+        <div class="funding-bar-wrap reveal d2" style="max-width:480px;margin:0 auto 32px">
+          <div class="funding-bar-label"><span id="d-cta-raised">$0 raised</span><span id="d-cta-pct">0% funded</span></div>
+          <div class="funding-bar-track"><div class="funding-bar-fill" id="d-cta-bar" style="width:0%"></div></div>
+        </div>
+        <p class="section-body reveal d2" id="d-cta-body" style="margin:0 auto 40px;text-align:center"></p>
         <div class="reveal d4">
-          <button onclick="switchTab('contact')" class="donate-btn" id="d-donate-btn"><span id="d-donate-btn-text">Make a Gift to The Bifrost School</span></button>
+          <button onclick="switchTab('contact')" class="donate-btn" id="d-donate-btn"><span id="d-donate-btn-text">Donate</span></button>
         </div>
         <p class="fiscal-note reveal" id="d-fiscal-note"></p>
+        <p class="section-body reveal" id="d-cta-devplan-note" style="margin-top:28px;text-align:center;opacity:.75;font-size:14px"></p>
       </div>
     </div>
   </div>
@@ -235,7 +233,7 @@
 
 <!-- ═══════════════════════════════════════════════════ TAB: ABOUT -->
 <div class="tab-panel" id="tab-about">
-  <div class="section dark reveal" style="padding-top:calc(56px + 80px);position:relative;overflow:hidden"><div style="position:absolute;inset:0;background-image:url(images/about-bg.jpg);background-size:cover;background-position:center 30%;filter:brightness(.22)"></div><div style="position:relative;z-index:2">
+  <div class="section dark reveal" style="padding:calc(56px + 80px) 0 0;position:relative;overflow:hidden"><div style="position:absolute;inset:0;background-image:url(images/about-bg.jpg);background-size:cover;background-position:center 30%;filter:brightness(.22)"></div><div style="position:relative;z-index:2">
     <div class="section-inner" style="max-width:760px;margin:0 auto;padding:0 24px 60px">
       <div class="eyebrow">The Story</div>
       <h2 class="section-title" id="d-about-story-title">How The Bifrost School Came to Be</h2>
@@ -243,7 +241,7 @@
     </div>
   </div>
   </div>
-  <div class="section dark reveal" style="border-top:1px solid var(--border)">
+  <div class="section dark reveal" style="padding:0;border-top:1px solid var(--border)">
     <div class="section-inner" style="max-width:760px;margin:0 auto;padding:40px 24px 24px">
       <div class="eyebrow">Founder</div>
       <div class="founder-bio-card">
@@ -260,7 +258,7 @@
     </div>
   </div>
   <!-- ADVISORS -->
-  <div class="section dark advisors-section reveal">
+  <div class="section dark advisors-section reveal" style="padding:0">
     <div class="section-inner" style="max-width:860px;margin:0 auto;padding:28px 24px 60px">
       <div class="eyebrow">Advisors</div>
       <h2 class="section-title" style="margin-bottom:40px">Built With Guidance From</h2>
