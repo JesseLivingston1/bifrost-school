@@ -66,14 +66,14 @@ window.BIFROST_CONTENT = {
   fundingSub: "12-month development & pilot goal",
   fundingGoal: 254000,
   amountRaised: 0,                 // update this as donations come in
-  fundingBlurb: "This funding covers the development, pilots, and initial launch of the school.",
+  fundingBlurb: "This funding covers the development, pilots, and first school partnerships.",
   milestonesLabel: "Development Milestones",
   milestones: [
-    { num: "1", strong: "Build the narrative world.", body: "Contract writers and game designers to develop the RPG setting, characters, and story systems that anchor every subject." },
-    { num: "2", strong: "Develop the curriculum.", body: "Collaborate with experienced educators to integrate English, Math, and Music in rigorous, standards-aligned ways." },
-    { num: "3", strong: "Run pilot programs.", body: "Launch pilots with our first partner schools to test, gather feedback, and refine before full launch." },
-    { num: "4", strong: "Hire and train founding staff.", body: "Recruit, vet, and onboard the teachers and creative staff who will bring the Bifrost world to life and develop the training program that will define how we teach." },
-    { num: "5", strong: "Build for scale.", body: "Finalize the platform, marketing, and curriculum sales infrastructure for sustainable growth from Year 1 onward." }
+    { num: "1", strong: "Build the narrative world.", body: "Contract writers and game designers to develop the RPG setting, characters, and story systems that any school's curriculum can be built into." },
+    { num: "2", strong: "Build the integration method.", body: "Work with experienced educators to develop the process that turns a school's existing units and standards into quests, so every partnership starts from a proven playbook instead of a blank page." },
+    { num: "3", strong: "Run pilot partnerships.", body: "Partner with our first schools to run live sessions, gather feedback from their teachers and students, and refine the model before we take on more." },
+    { num: "4", strong: "Hire and train the creative team.", body: "Recruit and onboard the writers, game designers, and session leaders who build each school's world and run the table, and develop the training that defines how we do it." },
+    { num: "5", strong: "Build for scale.", body: "Finalize the platform, marketing, and curriculum sales infrastructure so we can take on more partner schools from Year 1 onward." }
   ],
 
   /* ---------- Budget modal ("See full plan") ---------- */
